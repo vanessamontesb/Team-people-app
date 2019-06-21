@@ -4,15 +4,42 @@ import Navbar from '../../components/Navbar/Navbar'
 import Search from '../../components/Search/Search'
 import EmployeeForm from '../../components/EmployeeForm/EmployeeForm'
 import EmployeeProfile from '../../components/EmployeeProfile/EmployeeProfile'
+import EmployeesList from '../../components/EmployeesList/EmployeesList'
 
 class Employees extends React.Component{
-    state = { form: {
-        name: "",
-        job: "",
-        area: "",
-        imgSrc: "",
-        points: "",
-     }}
+    state = { 
+        form: {
+            name: "",
+            job: "",
+            area: "",
+            imgSrc: "",
+            points: "",
+        },
+        
+        employees: [{
+                    "id": 1,
+                    "name": "elliot watts",
+                    "job": "Bussiness Representative",
+                    "area": "Development",
+                    "imgSrc": "https://randomuser.me/api/portraits/men/36.jpg",
+                    "points": 9
+                }, {
+                    "id": 2,
+                    "name": "freddie jenkins",
+                    "job": "Bussiness Representative",
+                    "area": "Sales",
+                    "imgSrc": "https://randomuser.me/api/portraits/men/53.jpg",
+                    "points": 9
+                }, {
+                    "id": 3,
+                    "name": "amelia lavoie",
+                    "job": "Bussiness Analist",
+                    "area": "Sales",
+                    "imgSrc": "https://randomuser.me/api/portraits/women/67.jpg",
+                    "points": 7
+                }
+        ]
+    }
     
     handleChange = event => {
         this.setState({
@@ -46,6 +73,12 @@ class Employees extends React.Component{
                     imgSrc={this.state.form.imgSrc}
                     points={this.state.form.points}
                 />
+
+                <div>
+                    <h3>Employees List</h3>
+                    <EmployeesList list={this.state.employees}/>
+                </div>
+
             </div>
         )
     }
