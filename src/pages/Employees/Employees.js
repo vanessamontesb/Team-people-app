@@ -7,38 +7,43 @@ import EmployeeProfile from '../../components/EmployeeProfile/EmployeeProfile'
 import EmployeesList from '../../components/EmployeesList/EmployeesList'
 
 class Employees extends React.Component{
-    state = { 
-        form: {
-            name: "",
-            job: "",
-            area: "",
-            imgSrc: "",
-            points: "",
-        },
+    constructor(props) {
+        super(props)
+        console.log('1. Constructor')
         
-        employees: [{
-                    "id": 1,
-                    "name": "elliot watts",
-                    "job": "Bussiness Representative",
-                    "area": "Development",
-                    "imgSrc": "https://randomuser.me/api/portraits/men/36.jpg",
-                    "points": 9
-                }, {
-                    "id": 2,
-                    "name": "freddie jenkins",
-                    "job": "Bussiness Representative",
-                    "area": "Sales",
-                    "imgSrc": "https://randomuser.me/api/portraits/men/53.jpg",
-                    "points": 9
-                }, {
-                    "id": 3,
-                    "name": "amelia lavoie",
-                    "job": "Bussiness Analist",
-                    "area": "Sales",
-                    "imgSrc": "https://randomuser.me/api/portraits/women/67.jpg",
-                    "points": 7
-                }
-        ]
+        this.state = { 
+            form: {
+                name: "",
+                job: "",
+                area: "",
+                imgSrc: "",
+                points: "",
+            },
+            
+            employees: [{
+                        "id": 1,
+                        "name": "elliot watts",
+                        "job": "Bussiness Representative",
+                        "area": "Development",
+                        "imgSrc": "https://randomuser.me/api/portraits/men/36.jpg",
+                        "points": 9
+                    }, {
+                        "id": 2,
+                        "name": "freddie jenkins",
+                        "job": "Bussiness Representative",
+                        "area": "Sales",
+                        "imgSrc": "https://randomuser.me/api/portraits/men/53.jpg",
+                        "points": 9
+                    }, {
+                        "id": 3,
+                        "name": "amelia lavoie",
+                        "job": "Bussiness Analist",
+                        "area": "Sales",
+                        "imgSrc": "https://randomuser.me/api/portraits/women/67.jpg",
+                        "points": 7
+                    }
+            ]
+        }
     }
     
     handleChange = event => {
@@ -50,7 +55,24 @@ class Employees extends React.Component{
         })
     }
 
+    
+    componentDidMount() {
+        console.log('3. componentDidMount')
+        // Se guardará el nuevo componente creado desde el formulario
+        // Una arrow function que actualice el estado {this.setState(newEmployee en Employees (map?))}
+        
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('5. componentDidUpdate()')
+    }
+    
+    componentWillUnmount(){
+        
+    }
+
     render() {
+        console.log('2. render()')
 
         return(
             <div>
