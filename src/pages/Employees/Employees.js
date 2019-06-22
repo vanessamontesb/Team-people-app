@@ -2,10 +2,10 @@ import React from 'react'
 import axios from 'axios'
 
 import Navbar from '../../components/Navbar/Navbar'
-import Search from '../../components/Search/Search'
-import EmployeeForm from '../../components/EmployeeForm/EmployeeForm'
-import EmployeeProfile from '../../components/EmployeeProfile/EmployeeProfile'
-import EmployeesList from '../../components/EmployeesList/EmployeesList'
+import Search from '../../components/Employees-Container/Search/Search'
+import EmployeeForm from '../../components/Employees-Container/EmployeeForm/EmployeeForm'
+import EmployeeProfile from '../../components/Employees-Container/EmployeeProfile/EmployeeProfile'
+import EmployeesList from '../../components/Employees-Container/EmployeesList/EmployeesList'
 
 const API_URL= 'http://localhost:3004'
 

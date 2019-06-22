@@ -39,7 +39,7 @@ class EmployeeForm extends React.Component{
                     <input onChange={this.props.onChange} type="text" name="points" value={this.props.formValues.points}/>
 
                     <label htmlFor="">Image</label>
-                    <input onChange={this.props.onChange} type="text" name="urlSrc" value={this.props.formValues.urlSrc}/>
+                    <input onChange={this.props.onChange} type="text" name="urlSrc" value={this.props.formValues.imgSrc}/>
 
                     <button  onClick={this.handleClick} >Save</button>
                 </form>
