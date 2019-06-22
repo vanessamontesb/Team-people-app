@@ -7,7 +7,7 @@ import EmployeeForm from '../../components/Employees-Container/EmployeeForm/Empl
 import EmployeeProfile from '../../components/Employees-Container/EmployeeProfile/EmployeeProfile'
 import EmployeesList from '../../components/Employees-Container/EmployeesList/EmployeesList'
 
-const API_URL= 'http://localhost:3004'
+import { API_URL } from "../../constants";
 
 class Employees extends React.Component{
     constructor(props) {
