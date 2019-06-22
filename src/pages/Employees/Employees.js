@@ -1,10 +1,13 @@
 import React from 'react'
+import axios from 'axios'
 
 import Navbar from '../../components/Navbar/Navbar'
 import Search from '../../components/Search/Search'
 import EmployeeForm from '../../components/EmployeeForm/EmployeeForm'
 import EmployeeProfile from '../../components/EmployeeProfile/EmployeeProfile'
 import EmployeesList from '../../components/EmployeesList/EmployeesList'
+
+const API_URL= 'http://localhost:3004'
 
 class Employees extends React.Component{
     constructor(props) {
@@ -20,29 +23,8 @@ class Employees extends React.Component{
                 points: "",
             },
             
-            employees: [{
-                        "id": 1,
-                        "name": "elliot watts",
-                        "job": "Bussiness Representative",
-                        "area": "Development",
-                        "imgSrc": "https://randomuser.me/api/portraits/men/36.jpg",
-                        "points": 9
-                    }, {
-                        "id": 2,
-                        "name": "freddie jenkins",
-                        "job": "Bussiness Representative",
-                        "area": "Sales",
-                        "imgSrc": "https://randomuser.me/api/portraits/men/53.jpg",
-                        "points": 9
-                    }, {
-                        "id": 3,
-                        "name": "amelia lavoie",
-                        "job": "Bussiness Analist",
-                        "area": "Sales",
-                        "imgSrc": "https://randomuser.me/api/portraits/women/67.jpg",
-                        "points": 7
-                    }
-            ]
+            employees: []
+
         }
     }
     
@@ -60,7 +42,19 @@ class Employees extends React.Component{
         console.log('3. componentDidMount')
         // Se guardará el nuevo componente creado desde el formulario
         // Una arrow function que actualice el estado {this.setState(newEmployee en Employees (map?))}
-        
+        this.getEmployees()
+    }
+
+    getEmployees = () => {
+        axios.get(`${API_URL}/employees`)
+        .then(response => {
+            this.setState({employees: response.data},
+            console.log(response)
+            )
+        })
+        .catch(function(error){
+            console.log(error)
+        })
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -82,12 +76,6 @@ class Employees extends React.Component{
                 <EmployeeForm onChange={this.handleChange} formValues={this.state.form}/>
 
                 <EmployeeProfile 
-                    // id = {1}
-                    // name= "elliot watts"
-                    // job= "Bussiness Representative"
-                    // area= "Development"
-                    // imgSrc= "https://randomuser.me/api/portraits/men/36.jpg"
-                    // points= {9}
                     id={this.state.form.id}
                     name={this.state.form.name}
                     job={this.state.form.job}

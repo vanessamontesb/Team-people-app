@@ -25,7 +25,7 @@ class EmployeeForm extends React.Component{
                 <h1>Form</h1>
                 <h3>New Employee :)</h3>
 
-                <form onSubmit={this.handleSubmit} action="">
+                <form onSubmit={this.handleSubmit}>
                     <label htmlFor="">Name</label>
                     <input onChange={this.props.onChange} type="text" name="name" value={this.props.formValues.name}/>
 
