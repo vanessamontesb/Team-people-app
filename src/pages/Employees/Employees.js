@@ -28,15 +28,37 @@ class Employees extends React.Component{
         }
     }
     
-    handleChange = event => {
+    handleChange = e => {
         this.setState({
             form: {
                 ...this.state.form,
-                [event.target.name]: event.target.value
+                [e.target.name]: e.target.value
             }
         })
     }
 
+    createEmployee = e => {
+        e.preventDefault()
+        const {
+            form: { 
+                name,
+                job,
+                area,
+                imgSrc,
+                points,
+            }
+        } = this.state
+
+        axios.post(`${API_URL}/employees`, {
+            name,
+            job,
+            area,
+            imgSrc,
+            points,
+        })
+        .then(() => {this.getEmployees()})
+        .catch(() => {console.log('error in createEmployee')})
+    }
     
     componentDidMount() {
         console.log('3. componentDidMount')
@@ -73,7 +95,11 @@ class Employees extends React.Component{
                 <h1>Employees</h1>
                 <Navbar/>
                 <Search/>
-                <EmployeeForm onChange={this.handleChange} formValues={this.state.form}/>
+                <EmployeeForm 
+                    onChange={this.handleChange} 
+                    formValues={this.state.form}
+                    onSubmit={this.createEmployee}
+                    />
 
                 <EmployeeProfile 
                     id={this.state.form.id}
