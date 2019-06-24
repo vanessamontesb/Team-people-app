@@ -1,9 +1,16 @@
 import React from 'react'
 
 class EmployeeForm extends React.Component{
+    // state = {}
 
-
+    // handleChange = (event) => {
+    //     this.setState({
+    //         [event.target.name]: event.target.value
+    //     })
+    // }
+    
     handleClick = (event) => {console.log("Button clicked")}
+    
 
     render() {
 
@@ -14,20 +21,20 @@ class EmployeeForm extends React.Component{
                 <h3>New Employee :)</h3>
 
                 <form onSubmit={this.props.onSubmit}>
-                    <label>Name</label>
+                    <label htmlFor="">Name</label>
                     <input onChange={this.props.onChange} type="text" name="name" value={this.props.formValues.name}/>
 
-                    <label>Job</label>
+                    <label htmlFor="">Job</label>
                     <input onChange={this.props.onChange} type="text" name="job" value={this.props.formValues.job}/>
 
-                    <label>Area</label>
+                    <label htmlFor="">Area</label>
                     <input onChange={this.props.onChange} type="text" name="area" value={this.props.formValues.area}/>
 
-                    <label>Points</label>
+                    <label htmlFor="">Points</label>
                     <input onChange={this.props.onChange} type="text" name="points" value={this.props.formValues.points}/>
 
-                    <label>Image</label>
-                    <input onChange={this.props.onChange} type="text" name="imgSrc" value={this.props.formValues.imgSrc}/>
+                    <label htmlFor="">Image</label>
+                    <input onChange={this.props.onChange} type="text" name="urlSrc" value={this.props.formValues.urlSrc}/>
 
                     <button  onClick={this.handleClick} >Save</button>
                 </form>

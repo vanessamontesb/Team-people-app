@@ -39,6 +39,7 @@ class Employees extends React.Component{
 
     createEmployee = e => {
         e.preventDefault()
+        console.log("entro a la funcion")
         const {
             form: { 
                 name,
@@ -49,13 +50,14 @@ class Employees extends React.Component{
             }
         } = this.state
 
+
         axios.post(`${API_URL}/employees`, {
             name,
             job,
             area,
             imgSrc,
             points,
-        })
+        }, this.createEmployee)
         .then(() => {this.getEmployees()})
         .catch(() => {console.log('error in createEmployee')})
     }
@@ -70,8 +72,7 @@ class Employees extends React.Component{
     getEmployees = () => {
         axios.get(`${API_URL}/employees`)
         .then(response => {
-            this.setState({employees: response.data},
-            console.log(response)
+            this.setState({employees: response.data}
             )
         })
         .catch(function(error){
