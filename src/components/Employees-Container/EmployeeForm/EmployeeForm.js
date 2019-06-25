@@ -11,7 +11,7 @@ class EmployeeForm extends React.Component{
             <div>
                 <p>___________________________________</p>
                 <h1>Form</h1>
-                <h3>New Employee :)</h3>
+                <h3>Add New Employee :)</h3>
 
                 <form onSubmit={this.props.onSubmit}>
                     <label>Name</label>
