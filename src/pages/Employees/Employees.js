@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios'
 
 import Navbar from '../../components/Navbar/Navbar'
-import Search from '../../components/Employees-Container/Search/Search'
 import EmployeeForm from '../../components/Employees-Container/EmployeeForm/EmployeeForm'
 import EmployeeProfile from '../../components/Employees-Container/EmployeeProfile/EmployeeProfile'
 import EmployeesList from '../../components/Employees-Container/EmployeesList/EmployeesList'
@@ -23,9 +22,17 @@ class Employees extends React.Component{
                 points: "",
             },
             
-            employees: []
+            employees: [],
+
+            employeeFilter: "amelia"
 
         }
+    }
+
+    searchChange = e => {
+        this.setState({
+            employeeFilter:e.target.value
+            })
     }
     
     handleChange = e => {
@@ -95,7 +102,6 @@ class Employees extends React.Component{
             <div>
                 <h1>Employees</h1>
                 <Navbar/>
-                <Search/>
                 <EmployeeForm 
                     onChange={this.handleChange} 
                     formValues={this.state.form}
@@ -113,7 +119,10 @@ class Employees extends React.Component{
 
                 <div>
                     <h3>Employees List</h3>
-                    <EmployeesList list={this.state.employees}/>
+                    <EmployeesList 
+                        list={this.state.employees}
+                        employeeFilter= {this.state.employeeFilter}
+                        onChange= {this.searchChange} />
                 </div>
 
             </div>

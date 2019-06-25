@@ -11,6 +11,7 @@ class EmployeeProfile extends React.Component{
                 <div>
                     <div>
                         <p><span role="img" aria-label="star">⭐</span>{this.props.points}</p>
+                        <p>{this.props.job}</p>
                     </div>
                 </div>
                 <p>{this.props.name}</p>

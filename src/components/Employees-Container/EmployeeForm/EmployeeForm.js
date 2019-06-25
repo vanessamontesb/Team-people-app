@@ -24,7 +24,7 @@ class EmployeeForm extends React.Component{
                     <input onChange={this.props.onChange} type="text" name="area" value={this.props.formValues.area}/>
 
                     <label>Points</label>
-                    <input onChange={this.props.onChange} type="text" name="points" value={this.props.formValues.points}/>
+                    <input onChange={this.props.onChange} type="bumber" name="points" value={this.props.formValues.points}/>
 
                     <label>Image</label>
                     <input onChange={this.props.onChange} type="text" name="imgSrc" value={this.props.formValues.imgSrc}/>
