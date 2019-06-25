@@ -1,43 +1,43 @@
 import React from 'react'
 
-class EmployeesList extends React.Component{
+function EmployeesList (props) {
+    const employees = props.list
 
-    render(){
-        let filteredEmployees = this.props.list.filter(
-            (employeeinfo) =>{
-                return employeeinfo.name.indexOf(this.props.employeeFilter !== -1)
-            }
-        )
+    const [ search, setSearch ] = React.useState("")
 
-        return(
-            <div>
-                
-                <form>
-                    <label>Search</label>
-                    <input 
-                        type="text" 
-                        placeholder='Who are you looking for?'
-                        value={this.props.employeeFilter}
-                        onChange={this.props.onChange} 
-                    />
-                </form>
+    const filteredEmployees = employees.filter(
+        employeeinfo => {return employeeinfo.name.includes(search)}
+    )
 
-                
-                <ul>
-                    {filteredEmployees.map((employeeinfo) => {
-                            return (
-                                <li key={employeeinfo.id}>
-                                    <img src={employeeinfo.imgSrc} alt="Employee Profile"/>
-                                    <p>{employeeinfo.name}</p>
-                                    <p>{employeeinfo.points}</p>
-                                </li>
-                            )
-                    })}
 
-                </ul>
-            </div>
-        )
-    }
+    return(
+        <div>
+            
+            <form>
+                <label>Search</label>
+                <input 
+                    type="text" 
+                    placeholder='Who are you looking for?'
+                    value={search}
+                    onChange={e => setSearch(e.target.value) }
+                />
+            </form>
+
+            
+            <ul>
+                {filteredEmployees.map((employeeinfo) => {
+                        return (
+                            <li key={employeeinfo.id}>
+                                <img src={employeeinfo.imgSrc} alt="Employee Profile"/>
+                                <p>{employeeinfo.name}</p>
+                                <p>{employeeinfo.points}</p>
+                            </li>
+                        )
+                })}
+
+            </ul>
+        </div>
+    )
 }
 
 export default EmployeesList

@@ -24,16 +24,9 @@ class Employees extends React.Component{
             
             employees: [],
 
-            employeeFilter: "amelia"
-
         }
     }
 
-    searchChange = e => {
-        this.setState({
-            employeeFilter:e.target.value
-            })
-    }
     
     handleChange = e => {
         this.setState({
@@ -121,8 +114,7 @@ class Employees extends React.Component{
                     <h3>Employees List</h3>
                     <EmployeesList 
                         list={this.state.employees}
-                        employeeFilter= {this.state.employeeFilter}
-                        onChange= {this.searchChange} />
+                    />
                 </div>
 
             </div>
