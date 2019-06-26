@@ -83,6 +83,7 @@ class PrizeList extends Component {
                 imgSrc:"",
                 description:""
             },
+            filterText: "",
             createCharacterError: false
          }
     }
@@ -90,6 +91,12 @@ class PrizeList extends Component {
     componentDidMount = () => {
         this.getCharacters();
     }
+
+    handleTextChange = (e, keyText) => {
+        const value = e.target.value;
+        this.setState({ [keyText]: value })
+      }
+      
 
     getCharacters = () => {
         axios.get(`${API_URL}/prizes`)
@@ -110,6 +117,8 @@ class PrizeList extends Component {
             })
         })
     }
+
+    
 
     createCharacter = (e) => {
         e.preventDefault();
@@ -163,8 +172,11 @@ class PrizeList extends Component {
                 points,
                 imgSrc,
                 description
-            }
+            },
+            filterText,
         } = this.state;
+
+        const filteredPrizes = content.filter(prize => prize.name.includes(filterText));
 
         if (error) {
             return <div>Fetch Error: {error}</div>
@@ -172,6 +184,16 @@ class PrizeList extends Component {
 
         return (
             <>  
+
+        <div className="filter-container">
+          <input
+            onChange={(e) => this.handleTextChange(e, "filterText")}
+            placeholder="Filter prize by name"
+            className="filter-field"
+            type="text"
+            value={filterText}
+          />
+        </div>
                 <StyledFormContainer>
 
                     {createCharacterError && <p>An error ocurred creating Character</p>}
@@ -185,7 +207,7 @@ class PrizeList extends Component {
                     </StyledCharacterForm>
                 </StyledFormContainer>
                 <StyledCharactersGrid>
-                    {content.map(({ id, imgSrc, name, points }) => (
+                    {filteredPrizes.map(({ id, imgSrc, name, points }) => (
                         <Link key={id} to={`/prizes/${id}`}>
                             <Prize imgSrc={imgSrc} name={name} points={points}/>
                         </Link>

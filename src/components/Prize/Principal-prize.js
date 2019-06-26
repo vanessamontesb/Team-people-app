@@ -12,7 +12,7 @@ const StyledAppContainer = styled.div`
 function Prize() {
   return (
       <StyledAppContainer>
-        <SearchPrize/>
+       
         <PrizeList />
       </StyledAppContainer>
   );
