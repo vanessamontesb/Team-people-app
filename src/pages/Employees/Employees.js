@@ -4,7 +4,7 @@ import { API_URL } from "../../constants";
 
 import Navbar from '../../components/Navbar/Navbar'
 import EmployeeForm from '../../components/Employees-Container/EmployeeForm/EmployeeForm'
-import EmployeeProfile from '../../components/Employees-Container/EmployeeProfile/EmployeeProfile'
+import EmployeeNew from '../../components/Employees-Container/EmployeeNew/EmployeeNew'
 import EmployeesList from '../../components/Employees-Container/EmployeesList/EmployeesList'
 
 
@@ -98,7 +98,7 @@ class Employees extends React.Component{
                     onSubmit={this.createEmployee}
                     />
 
-                <EmployeeProfile 
+                <EmployeeNew 
                     id={this.state.form.id}
                     name={this.state.form.name}
                     job={this.state.form.job}
