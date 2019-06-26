@@ -21,9 +21,9 @@ class NavBar extends Component {
 
         let linksMarkup = this.props.links.map((link, index) => {
             let linkMarkup = link.active ? (
-                <a className="menu__link menu__link--active" href={link.link}>{link.label}</a>
+                <li className="menu__link menu__link--active" href={link.link}>{link.label}</li>
             ) : (
-                <a className="menu__link" href={link.link}>{link.label}</a>
+                <li className="menu__link" href={link.link}>{link.label}</li>
             );
 
             return (
