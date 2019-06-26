@@ -1,6 +1,6 @@
 import React from 'react';
 import {HashRouter, Route, Switch} from 'react-router-dom'
-
+import AppNavbar from './pages/navBarContainer'
 import Home from './pages/Home/Home'
 import Employees from './pages/Employees/Employees'
 import IdEmployee from './pages/IdEmployee/IdEmployee'
@@ -10,6 +10,7 @@ import './App.css';
 function App() {
   return (
     <HashRouter>
+       <Route component={AppNavbar} />
       <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/employees" component={Employees} />
