@@ -1,12 +1,12 @@
 import React from 'react'
 import axios from 'axios'
+import { API_URL } from "../../constants";
 
 import Navbar from '../../components/Navbar/Navbar'
 import EmployeeForm from '../../components/Employees-Container/EmployeeForm/EmployeeForm'
 import EmployeeProfile from '../../components/Employees-Container/EmployeeProfile/EmployeeProfile'
 import EmployeesList from '../../components/Employees-Container/EmployeesList/EmployeesList'
 
-import { API_URL } from "../../constants";
 
 class Employees extends React.Component{
     constructor(props) {
@@ -64,16 +64,13 @@ class Employees extends React.Component{
     
     componentDidMount() {
         console.log('3. componentDidMount')
-        // Se guardará el nuevo componente creado desde el formulario
-        // Una arrow function que actualice el estado {this.setState(newEmployee en Employees (map?))}
         this.getEmployees()
     }
 
     getEmployees = () => {
         axios.get(`${API_URL}/employees`)
         .then(response => {
-            this.setState({employees: response.data}
-            )
+            this.setState({employees: response.data})
         })
         .catch(function(error){
             console.log(error)
