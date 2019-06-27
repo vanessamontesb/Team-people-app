@@ -20,9 +20,21 @@ export const StyledCharacterCaption = styled.figcaption`
     padding: 3px;
 `;
 
+const StyleDeletePrizeButton =styled.button`
+    background: transparent;
+    border-radius: 3px;
+    border: 1px solid red;
+    transform: scale(1);
+    transition: transform 0.35s ease-in-out;
+    
+`;
+//<button onClick={deleteColor} className="delete-color">x</button>
+
+
 const Prize = ({imgSrc, points, name }) => {
     return (
         <StyledCharacterFigure>
+            <StyleDeletePrizeButton>Delete</StyleDeletePrizeButton>
             <StyledCharacterImg src={imgSrc} alt=""/>
             <StyledCharacterCaption>{name} </StyledCharacterCaption>    
             <StyledCharacterCaption> ⭐ {points} </StyledCharacterCaption>  

@@ -1,8 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 import { API_URL } from "../../constants";
-
-import Navbar from '../../components/Navbar/Navbar'
 import EmployeeForm from '../../components/Employees-Container/EmployeeForm/EmployeeForm'
 import EmployeeNew from '../../components/Employees-Container/EmployeeNew/EmployeeNew'
 import EmployeesList from '../../components/Employees-Container/EmployeesList/EmployeesList'
@@ -91,7 +89,6 @@ class Employees extends React.Component{
         return(
             <div>
                 <h1>Employees</h1>
-                <Navbar/>
                 <EmployeeForm 
                     onChange={this.handleChange} 
                     formValues={this.state.form}
