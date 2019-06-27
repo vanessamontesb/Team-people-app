@@ -31,11 +31,10 @@ export const StyledCharacterCaption = styled.figcaption`
 //<button onClick={deleteColor} className="delete-color">x</button>
 
 
-const Prize = ({imgSrc, points, name, deleteColor }) => {
+const Achievements = ({ points, name}) => {
     return (
         <>
         <StyledCharacterFigure>
-            <StyledCharacterImg src={imgSrc} alt=""/>
             <StyledCharacterCaption>{name} </StyledCharacterCaption>    
             <StyledCharacterCaption> ⭐ {points} </StyledCharacterCaption>  
         </StyledCharacterFigure>
@@ -43,4 +42,4 @@ const Prize = ({imgSrc, points, name, deleteColor }) => {
     );
 }
  
-export default Prize;
+export default Achievements;

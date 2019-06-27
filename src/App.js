@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound/NotFound'
 import Prize from '../src/components/Prize/Principal-prize'
 import PrizeDetails from './pages/Prize/PrizeDetails'
 import './App.css';
+import Achievement from './components/Achievements/Principal-achievements';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route exact path="/employees/:id" component={IdEmployee} />
       <Route exact path="/prizes" component={Prize} />
       <Route exact path="/prizes/:id" component={PrizeDetails} />
+      <Route exact path="/achievements" component={Achievement} />
       <Route component={NotFound} />
       </Switch>
     </HashRouter>
