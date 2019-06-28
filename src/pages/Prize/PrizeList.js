@@ -101,13 +101,18 @@ class PrizeList extends Component {
         this.setState({ [keyText]: value })
       }
 
+     
+    
+
 
     getCharacters = () => {
         axios.get(`${API_URL}/prizes`)
         .then(response => {
             this.setState({
                 prizes: {
-                    content: response.data,
+                    content: response.data.sort(function (a, b) {
+                        return a.points - b.points
+                    }),
                     error: ''
                 },
                 createCharacterError: false
@@ -120,6 +125,7 @@ class PrizeList extends Component {
                 }
             })
         })
+
     }
 
     
