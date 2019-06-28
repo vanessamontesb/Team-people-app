@@ -2,9 +2,6 @@ import React from 'react'
 
 class EmployeeForm extends React.Component{
 
-
-    handleClick = (event) => {console.log("Button clicked")}
-
     render() {
 
         return(

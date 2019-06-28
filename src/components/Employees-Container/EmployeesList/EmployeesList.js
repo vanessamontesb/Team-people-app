@@ -26,17 +26,17 @@ function EmployeesList (props) {
             
             <ul>
                 {filteredEmployees.map((employeeinfo) => {
-                    return (
-                        <li key={employeeinfo.id}>
-                            <Link to={`/employees/${employeeinfo.id}`}>
-                                
-                                    <img src={employeeinfo.imgSrc} alt="Employee Profile"/>
-                                    <p>{employeeinfo.name}</p>
-                                    <p>{employeeinfo.points}</p>
-                                    </Link>
-                            </li>
-                        )
-                })}
+        return (
+            <li key={employeeinfo.id}>
+                <Link to={`/employees/${employeeinfo.id}`}>
+                    
+                        <img src={employeeinfo.imgSrc} alt="Employee Profile"/>
+                        <p>{employeeinfo.name}</p>
+                        <p>{employeeinfo.points}</p>
+                        </Link>
+                </li>
+            )
+    })}
 
             </ul>
         </div>

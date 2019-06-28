@@ -2,6 +2,9 @@ import React from "react";
 import axios from "axios";
 import { API_URL } from "../../constants";
 import EmployeeForm from "../../components/Employees-Container/EmployeeForm/EmployeeForm";
+import EmployeeProfile from "../../components/Employees-Container/EmployeeProfile/EmployeeProfile";
+import EmployeePrizesList from "../../components/Employees-Container/EmployeePrizesList/EmployeePrizesList";
+
 
 class IdEmployee extends React.Component {
   constructor(props) {
@@ -14,7 +17,8 @@ class IdEmployee extends React.Component {
         imgSrc: "",
         points: "",
         id: ""
-      }
+      },
+      prizes: []
     };
   }
   handleChange = e => {
@@ -49,7 +53,12 @@ class IdEmployee extends React.Component {
         axios.delete(`${API_URL}/employees/${id}`)
         .then(res => this.props.history.push(`/employees`))
     }
-  async componentDidMount() {
+  componentDidMount() {
+      this.getEmployeeInfo()
+      this.getPrizes()
+  }
+
+  getEmployeeInfo = async () => {
     const id = this.props.match.params.id;
 
     const { data } = await axios.get(`${API_URL}/employees/${id}`);
@@ -57,28 +66,27 @@ class IdEmployee extends React.Component {
 
     console.log(this.state.employee);
   }
-
+  getPrizes = () => {
+      axios.get(`${API_URL}/prizes`)
+      .then(response => {
+          this.setState({prizes: response.data})
+      })
+      .catch(function(error){
+          console.log(error)
+      })
+  }
   render() {
     const employeeData = this.state.employee;
     return (
-      <div>
-        <img src={employeeData.imgSrc} alt="Profile" />
-        <p>{employeeData.points}</p>
-        <h3>{employeeData.name}</h3>
-        <ul>
-          <li>
-            <p>
-              <span>Job: </span>
-              <span>{employeeData.job}</span>
-            </p>
-          </li>
-          <li>
-            <p>
-              <span>Hired in: </span>
-              <span>{employeeData.area}</span>
-            </p>
-          </li>
-        </ul>
+        <div>
+        <EmployeeProfile 
+            name={employeeData.name}
+            job={employeeData.job}
+            area={employeeData.area}
+            imgSrc={employeeData.imgSrc}
+            points={employeeData.points}
+        />
+        
         <EmployeeForm
           onChange={this.handleChange}
           formValues={this.state.employee}
@@ -88,12 +96,9 @@ class IdEmployee extends React.Component {
         <button onClick={this.deleteEmployee}>Delete</button>
 
         <h2>Available Prizes</h2>
-        <ul>
-          <li>Prize 1</li>
-          <li>Prize 2</li>
-          <li>Prize 3</li>
-          <li>Prize 4</li>
-        </ul>
+        <EmployeePrizesList
+         list={this.state.prizes}
+        />
       </div>
     );
   }

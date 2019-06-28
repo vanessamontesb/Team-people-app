@@ -68,7 +68,13 @@ class Employees extends React.Component{
     getEmployees = () => {
         axios.get(`${API_URL}/employees`)
         .then(response => {
-            this.setState({employees: response.data})
+            this.setState(
+                {employees: response.data.sort(
+                    function (a,b) {
+                        return a.points < b.points ? 1 : b.points < a.points ? -1 : 0
+                    }
+                )}
+                )
         })
         .catch(function(error){
             console.log(error)
