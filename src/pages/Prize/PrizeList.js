@@ -69,14 +69,6 @@ const StyledFormContainer = styled.div`
     background-color: #555;
 `;
 
-const StyleDeletePrizeButton =styled.button`
-    background: transparent;
-    border-radius: 3px;
-    border: 1px solid gray;
-    transform: scale(1);
-    transition: transform 0.35s ease-in-out;
-
-`;
 
 class PrizeList extends Component {
     constructor(props) {
@@ -96,6 +88,8 @@ class PrizeList extends Component {
             createCharacterError: false
          }
     }
+
+    
 
     componentDidMount = () => {
         this.getCharacters();
@@ -127,6 +121,8 @@ class PrizeList extends Component {
             })
         })
     }
+
+    
 
 
     createCharacter = (e) => {
@@ -222,8 +218,7 @@ class PrizeList extends Component {
 
 
                         <Link  key={id} to={`/prizes/${id}`}>
-                         {/* <StyleDeletePrizeButton onClick={console.log("jeje")}>Edit</StyleDeletePrizeButton>
-                        <StyleDeletePrizeButton onClick={console.log("hi")}  >Delete</StyleDeletePrizeButton> */}
+
                              <Prize imgSrc={imgSrc} name={name} points={points} />
 
                         </Link>

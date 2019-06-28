@@ -167,13 +167,20 @@ class AchievementList extends Component {
         }))
     }
 
+    deleteAchievement=(id)=>
+    {
+     axios.delete(`${API_URL}/achievements/${id}`)
+     .then(()=>window.location.reload())
+    }
+
     render() {
         const {
             createCharacterError,
             achievements: { content, error },
             newCharacterFrom: {
                 name,
-                points
+                points,
+                
             },
             filterText,
         } = this.state;
@@ -214,8 +221,8 @@ class AchievementList extends Component {
 
 
                         <Link  key={id} to={`/achievements/`}>
-                         <StyleDeletePrizeButton onClick={console.log("jeje")}>Edit</StyleDeletePrizeButton>
-                        <StyleDeletePrizeButton onClick={console.log("hi")}  >Delete</StyleDeletePrizeButton> 
+                         <StyleDeletePrizeButton>Edit achievement</StyleDeletePrizeButton>
+                        <StyleDeletePrizeButton onClick={()=>this.deleteAchievement(id)}>Delete</StyleDeletePrizeButton> 
                              <Achievements  name={name} points={points} />
 
                         </Link>
