@@ -112,7 +112,9 @@ class AchievementList extends Component {
         .then(response => {
             this.setState({
                 achievements: {
-                    content: response.data,
+                    content: response.data.sort(function (a, b) {
+                        return a.points - b.points
+                    }),
                     error: ''
                 },
                 createCharacterError: false
