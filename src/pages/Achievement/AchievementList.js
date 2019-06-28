@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { API_URL } from "../../constants";
-import Prize from '../../components/Prize/prize';
+import Achievements from '../../components/Achievements/achievement';
 
 const StyledCharacterForm = styled.form`
     display: grid;
@@ -69,27 +69,32 @@ const StyledFormContainer = styled.div`
     background-color: #555;
 `;
 
+const StyleDeletePrizeButton =styled.button`
+    background: transparent;
+    border-radius: 3px;
+    border: 1px solid gray;
+    transform: scale(1);
+    transition: transform 0.35s ease-in-out;
 
-class PrizeList extends Component {
+`;
+
+class AchievementList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            prizes: {
+            achievements: {
                 content: [],
                 error: false
             },
             newCharacterFrom: {
                 name:"",
                 points:"",
-                imgSrc:"",
-                description:""
+                
             },
             filterText: "",
             createCharacterError: false
          }
     }
-
-    
 
     componentDidMount = () => {
         this.getCharacters();
@@ -103,10 +108,10 @@ class PrizeList extends Component {
 
 
     getCharacters = () => {
-        axios.get(`${API_URL}/prizes`)
+        axios.get(`${API_URL}/achievements`)
         .then(response => {
             this.setState({
-                prizes: {
+                achievements: {
                     content: response.data,
                     error: ''
                 },
@@ -115,14 +120,12 @@ class PrizeList extends Component {
         })
         .catch(error => {
             this.setState({
-                prizes: {
+                achievements: {
                     error: error.message
                 }
             })
         })
     }
-
-    
 
 
     createCharacter = (e) => {
@@ -130,17 +133,13 @@ class PrizeList extends Component {
         const {
             newCharacterFrom: {
                 name,
-                points,
-                imgSrc,
-                description
+                points
             }
         } = this.state;
 
-        axios.post(`${API_URL}/prizes`, {
+        axios.post(`${API_URL}/achievements`, {
             name,
-            points,
-            imgSrc,
-            description
+            points
         }, {
             headers: { "Content-Type": "application/json"}
         })
@@ -168,20 +167,25 @@ class PrizeList extends Component {
         }))
     }
 
+    deleteAchievement=(id)=>
+    {
+     axios.delete(`${API_URL}/achievements/${id}`)
+     .then(()=>window.location.reload())
+    }
+
     render() {
         const {
             createCharacterError,
-            prizes: { content, error },
+            achievements: { content, error },
             newCharacterFrom: {
                 name,
                 points,
-                imgSrc,
-                description
+                
             },
             filterText,
         } = this.state;
 
-        const filteredPrizes = content.filter(prize => prize.name.includes(filterText));
+        const filteredachievements = content.filter(achievement => achievement.name.includes(filterText));
 
 
         if (error) {
@@ -206,20 +210,20 @@ class PrizeList extends Component {
                     <StyledCharacterForm onSubmit={e => this.createCharacter(e)}>
                         {this.createTextInput(name, 'name')}
                         {this.createTextInput( points, 'points')}
-                        {this.createTextInput( imgSrc,'imgSrc')}
-                        {this.createTextInput(description, 'description')}
+                       
 
                         <button type="submit">Create</button>
                     </StyledCharacterForm>
                 </StyledFormContainer>
                 <StyledCharactersGrid>
 
-                    {filteredPrizes.map(({ id, imgSrc, name, points,})  => (
+                    {filteredachievements.map(({ id, name, points})  => (
 
 
-                        <Link  key={id} to={`/prizes/${id}`}>
-
-                             <Prize imgSrc={imgSrc} name={name} points={points} />
+                        <Link  key={id} to={`/achievements/`}>
+                         <StyleDeletePrizeButton>Edit achievement</StyleDeletePrizeButton>
+                        <StyleDeletePrizeButton onClick={()=>this.deleteAchievement(id)}>Delete</StyleDeletePrizeButton> 
+                             <Achievements  name={name} points={points} />
 
                         </Link>
 
@@ -230,5 +234,5 @@ class PrizeList extends Component {
     }
 }
 
-export default PrizeList;
+export default AchievementList;
 

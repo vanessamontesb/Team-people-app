@@ -24,6 +24,17 @@ const StyledProfilePic = styled.img`
     width: 300px;
 `;
 
+
+const StyleDeletePrizeButton =styled.button`
+    background: transparent;
+    border-radius: 3px;
+    border: 1px solid gray;
+    transform: scale(1);
+    transition: transform 0.35s ease-in-out;
+
+`;
+
+
 class PrizeDetails extends Component {
     constructor(props) {
         super(props);
@@ -54,7 +65,17 @@ class PrizeDetails extends Component {
                 error: error.message
             })
         })
+
+        
+
     }
+
+    deletePrize=(id)=>
+    {
+     axios.delete(`${API_URL}/prizes/${id}`)
+     .then(()=>this.props.history.push('/prizes'))
+    }
+        
 
     render() { 
         const {
@@ -62,7 +83,9 @@ class PrizeDetails extends Component {
                 name,
                 points,
                 imgSrc,
-                description
+                description,
+                id
+                
             }
         } = this.state;
 
@@ -72,9 +95,11 @@ class PrizeDetails extends Component {
                 <StyledCharacter>
                     <StyledProfilePic src={imgSrc} alt="Prize"/>
                     <StyledCharacterInfo>
+                    <StyleDeletePrizeButton>Edit prize</StyleDeletePrizeButton>
                         <p><b>Name : </b>{name}</p>
                         <p><b>Points: </b>{points}</p>
                         <p><b>Description: </b>{description}</p>
+                        <StyleDeletePrizeButton onClick={()=>this.deletePrize(id)}>Delete</StyleDeletePrizeButton>
                     </StyledCharacterInfo>
                 </StyledCharacter>
             </StyledProfile>
