@@ -29,7 +29,7 @@ class EmployeeForm extends React.Component{
                     <label>Image</label>
                     <input onChange={this.props.onChange} type="text" name="imgSrc" value={this.props.formValues.imgSrc}/>
 
-                    <button  onClick={this.handleClick} >Save</button>
+                    {/* <button  onClick={this.handleClick} >Save</button> */}
                 </form>
 
                 <p>___________________________________</p>

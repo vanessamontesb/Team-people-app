@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { API_URL } from "../../constants";
 import EmployeeForm from '../../components/Employees-Container/EmployeeForm/EmployeeForm'
-import EmployeeNew from '../../components/Employees-Container/EmployeeNew/EmployeeNew'
+import EmployeeProfile from '../../components/Employees-Container/EmployeeProfile/EmployeeProfile'
 import EmployeesList from '../../components/Employees-Container/EmployeesList/EmployeesList'
 
 
@@ -94,8 +94,9 @@ class Employees extends React.Component{
                     formValues={this.state.form}
                     onSubmit={this.createEmployee}
                     />
+                    <button  onClick={this.createEmployee} >Save</button>
 
-                <EmployeeNew 
+                <EmployeeProfile 
                     id={this.state.form.id}
                     name={this.state.form.name}
                     job={this.state.form.job}

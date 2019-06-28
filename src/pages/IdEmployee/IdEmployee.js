@@ -1,21 +1,56 @@
 import React from 'react'
 import axios from 'axios'
 import { API_URL } from "../../constants";
+import EmployeeForm from '../../components/Employees-Container/EmployeeForm/EmployeeForm'
+
 
 class IdEmployee extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            employee: []
+            employee: {
+                name:"",
+                job:"",
+                area:"",
+                imgSrc:"",
+                points:"",
+                id:""
+            }
         }
+    }
+    handleChange = e => {
+        const newInfo = this.state.employee
+        newInfo[e.target.name] = e.target.value
+
+        this.setState({
+            employee : newInfo
+            }
+        )
+    }
+
+    editEmployee = e => {
+        e.preventDefault()
+        console.log('submit from edit')
+        console.log(this.state.employee)
+
+        const id = this.props.match.params.id
+
+        axios.put(`${API_URL}/employees/${id}`, {            
+            name:this.state.employee.name,
+            job:this.state.employee.job,
+            area:this.state.employee.area,
+            imgSrc:this.state.employee.imgSrc,
+            points:this.state.employee.points
+        })
     }
 
     async componentDidMount() {
-        console.log('3. componentDiddMount')
         const id = this.props.match.params.id
-
+        
         const {data} = await axios.get(`${API_URL}/employees/${id}`)
         this.setState({employee : data})
+        
+        console.log(this.state.employee)
     }
 
     
@@ -40,6 +75,15 @@ class IdEmployee extends React.Component{
                 </p>
             </li>
         </ul>
+        <EmployeeForm 
+            onChange={this.handleChange} 
+            formValues={this.state.employee}
+            onSubmit={this.editEmployee}
+            />
+            <button  
+            onClick={this.editEmployee} 
+                >Save</button>
+
 
         <h2>Available Prizes</h2>
         <ul>

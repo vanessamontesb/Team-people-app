@@ -1,6 +1,6 @@
 import React from 'react'
 
-class EmployeeNew extends React.Component{
+class EmployeeProfile extends React.Component{
     
     render() {
 
@@ -22,4 +22,4 @@ class EmployeeNew extends React.Component{
     }
 }
 
-export default EmployeeNew
+export default EmployeeProfile
