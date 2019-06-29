@@ -37,7 +37,7 @@ const Prize = ({imgSrc, points, name, deleteColor }) => {
         <StyledCharacterFigure>
             <StyledCharacterImg src={imgSrc} alt=""/>
             <StyledCharacterCaption>{name} </StyledCharacterCaption>    
-            <StyledCharacterCaption> ⭐ {points} </StyledCharacterCaption>  
+            <StyledCharacterCaption> <span role="img" aria-label="star">⭐</span> {points} </StyledCharacterCaption>  
         </StyledCharacterFigure>
         </>
     );

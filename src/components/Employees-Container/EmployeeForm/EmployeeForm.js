@@ -1,38 +1,60 @@
-import React from 'react'
+import React from "react";
 
-class EmployeeForm extends React.Component{
+class EmployeeForm extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>___________________________________</p>
+        <h1>Form</h1>
+        <h3>Add New Employee :)</h3>
 
-    render() {
+        <form onSubmit={this.props.onSubmit}>
+          <label>Name</label>
+          <input
+            onChange={this.props.onChange}
+            type="text"
+            name="name"
+            value={this.props.formValues.name}
+          />
 
-        return(
-            <div>
-                <p>___________________________________</p>
-                <h1>Form</h1>
-                <h3>Add New Employee :)</h3>
+          <label>Job</label>
+          <input
+            onChange={this.props.onChange}
+            type="text"
+            name="job"
+            value={this.props.formValues.job}
+          />
 
-                <form onSubmit={this.props.onSubmit}>
-                    <label>Name</label>
-                    <input onChange={this.props.onChange} type="text" name="name" value={this.props.formValues.name}/>
+          <label>Area</label>
+          <input
+            onChange={this.props.onChange}
+            type="text"
+            name="area"
+            value={this.props.formValues.area}
+          />
 
-                    <label>Job</label>
-                    <input onChange={this.props.onChange} type="text" name="job" value={this.props.formValues.job}/>
+          <label>Points</label>
+          <input
+            onChange={this.props.onChange}
+            type="number"
+            name="points"
+            value={this.props.formValues.points}
+          />
 
-                    <label>Area</label>
-                    <input onChange={this.props.onChange} type="text" name="area" value={this.props.formValues.area}/>
+          <label>Image</label>
+          <input
+            onChange={this.props.onChange}
+            type="text"
+            name="imgSrc"
+            value={this.props.formValues.imgSrc}
+          />
 
-                    <label>Points</label>
-                    <input onChange={this.props.onChange} type="bumber" name="points" value={this.props.formValues.points}/>
+        </form>
 
-                    <label>Image</label>
-                    <input onChange={this.props.onChange} type="text" name="imgSrc" value={this.props.formValues.imgSrc}/>
-
-                    {/* <button  onClick={this.handleClick} >Save</button> */}
-                </form>
-
-                <p>___________________________________</p>
-            </div>
-        )
-    }
+        <p>___________________________________</p>
+      </div>
+    );
+  }
 }
 
-export default EmployeeForm
+export default EmployeeForm;

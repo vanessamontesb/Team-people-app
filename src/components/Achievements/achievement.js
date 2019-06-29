@@ -36,7 +36,7 @@ const Achievements = ({ points, name}) => {
         <>
         <StyledCharacterFigure>
             <StyledCharacterCaption>{name} </StyledCharacterCaption>    
-            <StyledCharacterCaption> ⭐ {points} </StyledCharacterCaption>  
+            <StyledCharacterCaption> <span role="img" aria-label="star">⭐</span> {points} </StyledCharacterCaption>  
         </StyledCharacterFigure>
         </>
     );
