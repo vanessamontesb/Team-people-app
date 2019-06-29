@@ -64,12 +64,19 @@ class IdEmployee extends React.Component {
     const { data } = await axios.get(`${API_URL}/employees/${id}`);
     this.setState({ employee: data });
 
-    console.log(this.state.employee);
+    // console.log(this.state.employee);
   }
   getPrizes = () => {
       axios.get(`${API_URL}/prizes`)
       .then(response => {
           this.setState({prizes: response.data})
+        //   console.log(this.state.employee.points)
+          console.log({prizes: response.data})
+          this.setState(
+            {prizes: response.data.filter(
+                 (a) => this.state.employee.points >= a.points 
+              )}
+            )
       })
       .catch(function(error){
           console.log(error)
