@@ -20,8 +20,14 @@ class Employees extends React.Component {
         points: ""
       },
 
-      employees: []
+      employees: [],
+      open:false
     };
+    this.openForm = this.openForm.bind(this)
+  }
+
+  openForm(e){
+    this.setState({open: !this.state.open})
   }
 
   handleChange = e => {
@@ -91,6 +97,7 @@ class Employees extends React.Component {
 
     return (
       <>
+      {this.state.open? (
         <div className="create_employee_container">
             <EmployeeProfile
             id={this.state.form.id}
@@ -107,11 +114,11 @@ class Employees extends React.Component {
             />
             <button className="button_general button_save" onClick={this.createEmployee}>Save</button>
         </div>
-
-        <button>Add New</button>
-        <div>
-          <EmployeesList list={this.state.employees} />
-        </div>
+        ):null}
+          <div className="add_container">
+            <button className="button_general button_add" onClick={(e)=> this.openForm(e)}>Add New</button>
+          </div>
+            <EmployeesList list={this.state.employees} />
       </>
     );
   }

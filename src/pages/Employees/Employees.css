@@ -6,15 +6,41 @@
     padding: 40px 0;
 }
 
-.button_save{
+.button_general{
     background-color: #62e52c;
     border-radius: 5px;
-    margin: 0 75px;
     border: none;
     color: #fafafa;
     font-size: 18px;    
 }
 
-.button_save:hover {
+.button_general:hover {
     background-color: #5dce2c;
+}
+
+.button_save{
+    margin: 0 75px;
+    
+}
+.list_add_container{
+    display: grid;
+    width: 1vh;
+    padding: 0.25fr;
+    box-sizing: border-box;
+    max-width: 1200px;
+    height: auto;
+    
+}
+.add_container{
+    display: grid;
+    margin-bottom: -35px;
+    justify-content: center;
+    grid-template: 35px /repeat(4, 200px);
+    grid-template-areas: ". . . button"
+}
+
+.button_add{
+    grid-area: button;
+    /* width: 700px;
+    height: 35px; */
 }

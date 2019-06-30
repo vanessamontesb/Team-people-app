@@ -7,14 +7,16 @@
     background-color:rgba(223, 223, 223, 0.452)
 }
 
-.general_search_container{
+.general_search_container form{
     display: grid;
     justify-content: center;
+    grid-template: 35px /repeat(4, 200px);
+    grid-template-areas: "search search search ."    
+    
 }
 .general_search_bar{
-    margin: 40px 0;
-    width: 700px;
-    height: 35px;
+
+    grid-area: search;
     background: #e6e6e6;
     border: none;
     border-radius: 5px;
@@ -36,8 +38,9 @@
     grid-template-columns: repeat(auto-fill, 200px);
     grid-gap: 5px;
     list-style: none;
-    margin: 0;
+    margin: 1fr;
     padding: 0;
+    box-sizing: border-box;
     justify-content: center;
 
 }
