@@ -87,7 +87,9 @@ class PrizeList extends Component {
         }, {
             headers: { "Content-Type": "application/json"}
         })
-        .then(() => { this.getCharacters() })
+        .then(() => { this.getCharacters() 
+            window.location.reload()
+        })
         .catch(() => { this.setState({ createCharacterError: true })})
     }
 

@@ -60,6 +60,7 @@ class Employees extends React.Component {
       )
       .then(() => {
         this.getEmployees();
+        window.location.reload()
       })
       .catch(() => {
         console.log("error in createEmployee");

@@ -5,7 +5,7 @@
     grid-template: 48px /repeat(3, 200px);
     grid-template-areas: "search search search .";
     margin-top:20px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     
 
 
@@ -24,27 +24,10 @@
 
 
 
-    }
-
-    @media (max-width: 768px) {
-
-
-    }
-
-    @media (max-width: 475px) {
-
-
 }
 
-button {
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid #fff;
-    font-size: 16px;
-    color: #fff;
-    border-radius: 5px;
-    margin: 5px;
-}
+
+
 
 .createPrizeInput{
 
@@ -90,32 +73,13 @@ button {
 
 .editPrizeForm{
     display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
 
 
 
 }
-    
-@media (max-width: 768px) {
-    
-    
-}
 
-@media (max-width: 475px) {
-    
-   
-}
-
-button {
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid #fff;
-    font-size: 16px;
-    color: #fff;
-    border-radius: 5px;
-    margin: 5px;
-}
 
 .editButton{
     text-align: center;
