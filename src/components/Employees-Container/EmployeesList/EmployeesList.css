@@ -11,7 +11,9 @@
     display: grid;
     justify-content: center;
     grid-template: 35px /repeat(4, 200px);
-    grid-template-areas: "search search search ."    
+    grid-template-areas: "search search search ." ;   
+    padding-top: 5px;
+    padding-bottom: 15px;
     
 }
 .general_search_bar{
@@ -24,6 +26,8 @@
     font-size: 18px;
     font-style: italic;
     display: block;
+    height: 28px;
+   
 }
 .general_search_bar:focus{
     border: none;

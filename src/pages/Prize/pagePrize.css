@@ -1,5 +1,14 @@
 .filterContainer{
     align-content: center;
+    display: grid;
+    justify-content: center;
+    grid-template: 48px /repeat(3, 200px);
+    grid-template-areas: "search search search .";
+    margin-top:20px;
+    margin-bottom: 25px;
+    
+
+
 }
 
 .createPrizeContainer{
@@ -15,27 +24,10 @@
 
 
 
-    }
-
-    @media (max-width: 768px) {
-
-
-    }
-
-    @media (max-width: 475px) {
-
-
 }
 
-button {
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid #fff;
-    font-size: 16px;
-    color: #fff;
-    border-radius: 5px;
-    margin: 5px;
-}
+
+
 
 .createPrizeInput{
 
@@ -44,6 +36,7 @@ button {
     border: 1px solid #222;
     font-size: 16px;
     padding: 5px 5px 5px 10px;
+    
 
 }
 
@@ -51,9 +44,22 @@ button {
     margin-top: 10px;
     display: grid;
     justify-content: center;
-    grid-gap: 5px;
-    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 50px;
+    grid-template-columns: repeat(3, 220px);
 }
+
+@media (max-width: 768px) {
+
+    .PrizeGrid{
+        margin-top: 10px;
+        display: grid;
+        justify-content: center;
+        grid-gap: 5px;
+        grid-template-columns: repeat(auto-fill, 200px);
+    }
+
+}
+
 
 .infoPrizeContainer{
     align-content: center;
@@ -67,32 +73,13 @@ button {
 
 .editPrizeForm{
     display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
 
 
 
 }
-    
-@media (max-width: 768px) {
-    
-    
-}
 
-@media (max-width: 475px) {
-    
-   
-}
-
-button {
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid #fff;
-    font-size: 16px;
-    color: #fff;
-    border-radius: 5px;
-    margin: 5px;
-}
 
 .editButton{
     text-align: center;
@@ -108,7 +95,7 @@ button {
 
 .infoPrizeImg {
     height: 300px;
-    width: 300px;
+    width: 200px;
 }
 
 .prizeinfo{
@@ -118,4 +105,61 @@ button {
 .deleteButton{
     text-align: center;
     background: rgb(218, 111, 11);
+}
+
+.filter-field{
+    grid-area: search;
+    background: #e6e6e6;
+    border: none;
+    border-radius: 5px;
+    padding-left: 18px;
+    font-size: 18px;
+    font-style: italic;
+    height: 30px;
+
+}
+
+.filter-field:focus{
+        border: none;
+}
+
+.filter-field:placeholder-shown{
+    font-style: italic
+}
+
+.button_general{
+    background-color: #62e52c;
+    border-radius: 5px;
+    border: none;
+    color: #fafafa;
+    font-size: 18px;  
+    width: 150px;  
+    height: 30px;
+  
+}
+
+.button_general:hover {
+    background-color: #5dce2c;
+}
+
+.searchBar-addButtonContainer
+{
+    display: grid;
+    margin-bottom: -15px;
+    justify-content: center;
+    grid-template: 35px /repeat(4, 200px);
+    grid-template-areas: ". . . button";
+    align-content: center;
+    display:flex;
+    margin-left: 25px;
+}
+
+.addButtonContainer{
+    height: 80px;
+    display: flex;
+    margin-top: 20px;
+    /* background: red; */
+    align-content: center;
+    
+
 }

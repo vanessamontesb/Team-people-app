@@ -23,7 +23,8 @@ body{
 }
 
 .button_save{
-    margin: 0 75px;
+    margin: 0 100px;
+  
     
 }
 .list_add_container{
@@ -36,6 +37,7 @@ body{
     
 }
 .add_container{
+    margin-top: 20px;
     display: grid;
     margin-bottom: -35px;
     justify-content: center;
