@@ -111,6 +111,10 @@ class PrizeList extends Component {
         }))
     }
 
+    openForm(e){
+        this.setState({open: !this.state.open})
+      }
+
     render() {
         const {
             createCharacterError,
@@ -133,16 +137,23 @@ class PrizeList extends Component {
 
         return (
             <>
-
+        <div className="searchBar-addButtonContainer">
         <div className="filterContainer">
-          <input
+          <input 
             onChange={(e) => this.handleTextChange(e, "filterText")}
             placeholder="Search by name"
             className="filter-field"
             type="text"
             value={filterText}
           />
+        
         </div>
+        <div className="addButtonContainer">
+        <button className="button_general button_add" onClick={(e)=> this.openForm(e)}>Add New</button>
+        </div>
+       
+        </div>
+                 {this.state.open? (
                 <div className="createPrizeContainer">
 
                     {createCharacterError && <p>An error ocurred creating Character</p>}
@@ -155,6 +166,9 @@ class PrizeList extends Component {
                         <button type="submit">Create</button>
                     </form>
                 </div>
+                ):null}
+            
+
                 <div className ="PrizeGrid">
 
                     {filteredPrizes.map(({ id, imgSrc, name, points,})  => (

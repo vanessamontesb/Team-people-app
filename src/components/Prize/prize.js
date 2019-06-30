@@ -7,7 +7,7 @@ const Prize = ({imgSrc, points, name, deleteColor }) => {
         <>
         <figure className ="prizeFigure">
             <img className="prizeImg" src={imgSrc} alt="prize"/>
-            <figcaption className="prizeFigcaption">{name} </figcaption>    
+            <h3 className="prizeFigcaptionName">{name} </h3>    
             <figcaption className="prizeFigcaption"> <span role="img" aria-label="star">⭐</span> {points}</figcaption>  
         </figure>
         </>
