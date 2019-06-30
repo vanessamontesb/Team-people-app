@@ -1,0 +1,21 @@
+
+.achievementFigure{
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0;
+
+}
+
+.achievementFigcaption{
+
+    background-color: #cdcdcd;
+    text-decoration: none;
+    color: #222;
+    padding: 3px;
+
+}
+
+.achievementContainer{
+    text-align: center;
+}

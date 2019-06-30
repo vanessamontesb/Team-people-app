@@ -68,9 +68,6 @@ const StyledFormContainer = styled.div`
     background-color: #555;
 `;
 
-const StyledProfile = styled.div`
-    text-align: center;
-`;
 
 const StyledCharacter = styled.div`
     display: flex;
@@ -159,10 +156,8 @@ class EditAchievement extends Component {
         }))
     }
 
-    editEmployee = e => {
+    editAchievement = e => {
         e.preventDefault();
-        console.log("submit from edit");
-        console.log(this.state.characterInfo);
     
         const id = this.props.match.params.id;
     
@@ -177,7 +172,7 @@ class EditAchievement extends Component {
       };
         
       createTextInput = (value, field) => (
-        <StyledCharacterInput
+        <input className= "achievementInput"
             required
             type="text"
             name={field}
@@ -198,31 +193,31 @@ class EditAchievement extends Component {
         } = this.state;
 
         return ( 
-            <StyledProfile>
+            <div className ="editAchivementContainer">
 
-                <StyledFormContainer>
+                <div className ="formContainer">
 
 
-                <StyledCharacterForm onSubmit={e => this.editEmployee(e)}
+                <form className ="editAchievementForm" onSubmit={e => this.editAchievement(e)}
                 onChange={this.handleChange}
                 formValues={this.state.characterInfo}>
                 {this.createTextInput(name, 'name')}
                 {this.createTextInput( points, 'points')}
-                <StyleDeletePrizeButton  type="submit" onClick={this.editEmployee}>Save</StyleDeletePrizeButton>
+                <button type="submit" onClick={this.editAchievement}>Save</button>
                 
 
                
-                </StyledCharacterForm>
-                </StyledFormContainer>
+                </form>
+                </div>
                 
-                <StyledCharacter>
-                    <StyledCharacterInfo>
+                <div className="containerAchievementEdit">
+                    
                         <p><b>Name : </b>{name}</p>
                         <p><b>Points: </b>{points}</p>
-                        <StyleDeletePrizeButton onClick={()=>this.deletePrize(id)}>Delete</StyleDeletePrizeButton>
-                    </StyledCharacterInfo>
-                </StyledCharacter>
-            </StyledProfile>
+                        <button className="deleteButton"onClick={()=>this.deletePrize(id)}>Delete</button>
+                   
+                </div>
+            </div>
          );
     }
 }
