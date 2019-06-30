@@ -81,7 +81,7 @@ class AchievementList extends Component {
 
   createTextInput = (value, field) => (
     <input
-      className="AchievementInput"
+      className="achievement_inputcreate"
       required
       type="text"
       name={field}
@@ -127,25 +127,34 @@ class AchievementList extends Component {
             value={filterText}
           />
         </div>
-        <div 
-        className="formContainer"
-        >
-          {createCharacterError && <p>An error ocurred creating Character</p>}
-          <form
-            className="creatAchievementform"
-            onSubmit={e => this.createCharacter(e)}
-          >
-            {this.createTextInput(name, "name")}
-            {this.createTextInput(points, "points")}
-
-            <button type="submit">Create</button>
-          </form>
-        </div>
         <div className="achievement_grid_wrapper">
+            {createCharacterError && <p>An error ocurred creating Character</p>}
+            <form
+              className="achievement_formcreate"
+              onSubmit={e => this.createCharacter(e)}
+            >
+              <div className="achievement_inputcreate_container">
+                <b><label>Name:</label></b>
+                {this.createTextInput(name, "name")}
+                <b><label>Points:</label></b>
+                {this.createTextInput(points, "points")}
+              </div>
+
+              <button type="submit" className="button_general achievement_saveform_button">
+                Create
+              </button>
+            </form>
+
           {filteredachievements.map(({ id, name, points }) => (
-            <Link  className="achievement_grid" key={id} to={`/achievements/${id}`}>
+            <Link
+              className="achievement_grid"
+              key={id}
+              to={`/achievements/${id}`}
+            >
               <Achievements name={name} points={points} />
-              <button className="general_button achievement_edit_button">Edit</button>
+              <button className="button_general achievement_edit_button">
+                Edit
+              </button>
             </Link>
           ))}
         </div>

@@ -1,31 +1,49 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap" rel="stylesheet');
-
 body{
   background-color: #f7f7f7;
 }
 
-.formContainer {
-  color: #fff;
-  padding: 10px;
-  background-color: #555;
+.achievement_formcreate{
+  margin: 40px 0;
+  display: grid;
+  justify-content: center;
+  grid-gap: 5px;
+  grid-template-columns: minmax(450px, 500px) minmax(100px, 150px);
+  grid-template-rows: repeat(auto-fill, 140px);
+  border-radius: 5px;
+  background: #e5e5e5;
+  color: #253746;
+}
+.achievement_inputcreate_container{
+  display: grid;
+  grid-template: 30px 30px / 70px 1fr;
+  align-content: space-evenly
+}
+.achievement_inputcreate{
+  border-radius: 5px;
+  background: #bebebe;
+  align-items: start;
+  border: none;
+  color: #fafafa;
+  font-size: 18px;
+  padding-left: 15px;
 }
 
-.createAchievementform {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, auto);
+.achievement_saveform_button {
+  text-align: center;
+  height: 90px;
+  align-self: center;
+  background: #e5e5e5;;
+  border: 2px solid #62e52c;
+  color: #62e52c;
+}
+.achievement_saveform_button:hover {
+  background: #d1ecc6;
+
 }
 
 .achievement_grid_wrapper {
   max-width: 700px;
   margin: 0 auto;
-}
-
-.achievement_edit_button {
-  text-align: center;
-  background: #62e52c;
-  height: 35px;
-  align-self: center;
 }
 
 .achievement_grid {
@@ -40,37 +58,14 @@ body{
   background: #e5e5e5;
   color: #253746;
 }
-.AchievementInput {
-  margin: 5px;
-  border-radius: 5px;
-  border: 1px solid #222;
-  font-size: 16px;
-  padding: 5px 5px 5px 10px;
-}
 
-.editAchivementContainer {
+.achievement_edit_button {
   text-align: center;
+  height: 35px;
+  align-self: center;
 }
 
-.editAchievementForm {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, auto);
-}
 
-.deleteButton {
-  text-align: center;
-  background: rgb(218, 111, 11);
-}
-
-.edit_button {
-  background: #62e52c;
-}
-.containerAchievementEdit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 @media (max-width: 768px) {
 }
