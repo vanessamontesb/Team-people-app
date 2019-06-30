@@ -2,6 +2,24 @@ body{
   background-color: #f7f7f7;
 }
 
+.achievement_grid_wrapper {
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.achievement_filter_container{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 30px
+}
+.achievements-filter-field{
+  background: #e6e6e6;
+  border: none;
+  border-radius: 5px;
+  padding-left: 18px;
+  font-size: 18px;
+  font-style: italic;
+}
 .achievement_formcreate{
   margin: 40px 0;
   display: grid;
@@ -26,6 +44,7 @@ body{
   color: #fafafa;
   font-size: 18px;
   padding-left: 15px;
+  margin-right: 15px;
 }
 
 .achievement_saveform_button {
@@ -38,12 +57,6 @@ body{
 }
 .achievement_saveform_button:hover {
   background: #d1ecc6;
-
-}
-
-.achievement_grid_wrapper {
-  max-width: 700px;
-  margin: 0 auto;
 }
 
 .achievement_grid {
@@ -63,6 +76,10 @@ body{
   text-align: center;
   height: 35px;
   align-self: center;
+  color: #253746;
+  border: 2px solid #253746;
+  background-color: transparent;
+
 }
 
 

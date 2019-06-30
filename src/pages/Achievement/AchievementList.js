@@ -118,16 +118,17 @@ class AchievementList extends Component {
 
     return (
       <>
-        <div className="filter-container">
+        <div className="achievement_grid_wrapper">
+        <form className="achievement_filter_container">
           <input
             onChange={e => this.handleTextChange(e, "filterText")}
             placeholder="Search by Achievement name"
-            className="filter-field"
+            className="achievements-filter-field"
             type="text"
             value={filterText}
           />
-        </div>
-        <div className="achievement_grid_wrapper">
+          <button className="button_general">Add New</button>
+        </form>
             {createCharacterError && <p>An error ocurred creating Character</p>}
             <form
               className="achievement_formcreate"
@@ -140,7 +141,7 @@ class AchievementList extends Component {
                 {this.createTextInput(points, "points")}
               </div>
 
-              <button type="submit" className="button_general achievement_saveform_button">
+              <button onClick={(e)=> this.openForm(e)} className="button_general achievement_saveform_button">
                 Create
               </button>
             </form>
