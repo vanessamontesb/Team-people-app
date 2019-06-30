@@ -121,7 +121,7 @@ class AchievementList extends Component {
         <div className="filter-container">
           <input
             onChange={e => this.handleTextChange(e, "filterText")}
-            placeholder="Search by name"
+            placeholder="Search by Achievement name"
             className="filter-field"
             type="text"
             value={filterText}

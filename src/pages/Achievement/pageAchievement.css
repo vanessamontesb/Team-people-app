@@ -10,7 +10,7 @@ body{
   grid-template-columns: minmax(450px, 500px) minmax(100px, 150px);
   grid-template-rows: repeat(auto-fill, 140px);
   border-radius: 5px;
-  background: #e5e5e5;
+  background: #eeeeee;
   color: #253746;
 }
 .achievement_inputcreate_container{
@@ -32,7 +32,7 @@ body{
   text-align: center;
   height: 90px;
   align-self: center;
-  background: #e5e5e5;;
+  background: transparent;
   border: 2px solid #62e52c;
   color: #62e52c;
 }
