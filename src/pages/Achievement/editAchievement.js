@@ -75,7 +75,7 @@ class EditAchievement extends Component {
 
   createTextInput = (value, field) => (
     <input
-      className="achievementInput"
+      className="achievement_inputcreate"
       required
       type="text"
       name={field}
@@ -91,34 +91,39 @@ class EditAchievement extends Component {
     } = this.state;
 
     return (
-      <div className="editAchivementContainer">
+      <div className="achievement_grid_wrapper">
         <div className="formContainer">
           <form
-            className="editAchievementForm"
+            className="achievement_formcreate"
             onSubmit={e => this.editAchievement(e)}
             onChange={this.handleChange}
             formvalues={this.state.characterInfo}
           >
-            {this.createTextInput(name, "name")}
-            {this.createTextInput(points, "points")}
-            <button type="submit" onClick={this.editAchievement}>
-              Save
-            </button>
+            <div className="achievement_inputcreate_container">
+              <b>
+                <label>Name:</label>
+              </b>
+              {this.createTextInput(name, "name")}
+              <b>
+                <label>Points:</label>
+              </b>
+              {this.createTextInput(points, "points")}
+            </div>
+            <div className="achievent_eddit_button_container">
+              <button
+                onClick={this.editAchievement}
+                className="button_general achievement_save_button"
+              >
+                Save
+              </button>
+              <button
+                onClick={() => this.deletePrize(id)}
+                className="button_general achievement_save_button general_delete_button"
+              >
+                Delete
+              </button>
+            </div>
           </form>
-        </div>
-
-        <div className="containerAchievementEdit">
-          <p>
-            <b>Name: </b>
-            {name}
-          </p>
-          <p>
-            <b>Points: </b>
-            {points}
-          </p>
-          <button className="deleteButton" onClick={() => this.deletePrize(id)}>
-            Delete
-          </button>
         </div>
       </div>
     );

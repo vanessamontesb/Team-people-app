@@ -127,7 +127,6 @@ class AchievementList extends Component {
             type="text"
             value={filterText}
           />
-          <button className="button_general">Add New</button>
         </form>
             {createCharacterError && <p>An error ocurred creating Character</p>}
             <form
@@ -141,7 +140,7 @@ class AchievementList extends Component {
                 {this.createTextInput(points, "points")}
               </div>
 
-              <button onClick={(e)=> this.openForm(e)} className="button_general achievement_saveform_button">
+              <button onClick={e => this.createCharacter(e)} className="button_general achievement_saveform_button">
                 Create
               </button>
             </form>

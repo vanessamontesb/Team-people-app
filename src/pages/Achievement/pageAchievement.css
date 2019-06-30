@@ -72,6 +72,19 @@ body{
   color: #253746;
 }
 
+.achievement_save_button {
+  text-align: center;
+  height: 35px;
+  align-self: center;
+}
+.general_delete_button {
+  background-color: #f77b0e
+
+}
+.achievent_eddit_button_container{
+  display: grid;
+  align-content: space-evenly;
+}
 .achievement_edit_button {
   text-align: center;
   height: 35px;
