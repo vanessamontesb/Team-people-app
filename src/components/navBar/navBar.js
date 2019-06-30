@@ -28,7 +28,9 @@ class NavBar extends Component {
 
             return (
                 <Link key={index} className="menu__list-item"  to={link.link}>{linkMarkup}
+              
                 </Link>
+                
                
             );
         });

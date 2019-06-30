@@ -5,8 +5,8 @@ import  NavBar from '../../src/components/navBar/navBar';
 class AppNavbar extends Component {
     render() {
         let links = [
-            { label: 'Employees'+ '  ' +'|', link: '/Employees' },
-            { label: 'Prizes' + '  ' +'|', link: '/Prizes' },
+            { label: 'Employees', link: '/Employees' },
+            { label: 'Prizes', link: '/Prizes' },
             { label: 'Achievements', link: '/Achievements' },
         ];
 
