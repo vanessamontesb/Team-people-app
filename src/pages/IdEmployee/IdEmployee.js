@@ -4,7 +4,7 @@ import { API_URL } from "../../constants";
 import EmployeeForm from "../../components/Employees-Container/EmployeeForm/EmployeeForm";
 import EmployeeProfile from "../../components/Employees-Container/EmployeeProfile/EmployeeProfile";
 import EmployeePrizesList from "../../components/Employees-Container/EmployeePrizesList/EmployeePrizesList";
-
+import "./IdEmployee.css";
 
 class IdEmployee extends React.Component {
   constructor(props) {
@@ -43,19 +43,21 @@ class IdEmployee extends React.Component {
       area: this.state.employee.area,
       imgSrc: this.state.employee.imgSrc,
       points: this.state.employee.points
-    });
+    })
+    .then(res => this.props.history.push(`/employees`));
   };
 
-    deleteEmployee = e => {
-        e.preventDefault()
-        const id = this.props.match.params.id;
+  deleteEmployee = e => {
+    e.preventDefault();
+    const id = this.props.match.params.id;
 
-        axios.delete(`${API_URL}/employees/${id}`)
-        .then(res => this.props.history.push(`/employees`))
-    }
+    axios
+      .delete(`${API_URL}/employees/${id}`)
+      .then(res => this.props.history.push(`/employees`));
+  };
   componentDidMount() {
-      this.getEmployeeInfo()
-      this.getPrizes()
+    this.getEmployeeInfo();
+    this.getPrizes();
   }
 
   getEmployeeInfo = async () => {
@@ -65,48 +67,60 @@ class IdEmployee extends React.Component {
     this.setState({ employee: data });
 
     // console.log(this.state.employee);
-  }
+  };
   getPrizes = () => {
-      axios.get(`${API_URL}/prizes`)
+    axios
+      .get(`${API_URL}/prizes`)
       .then(response => {
-          this.setState({prizes: response.data})
+        this.setState({ prizes: response.data });
         //   console.log(this.state.employee.points)
-          console.log({prizes: response.data})
-          this.setState(
-            {prizes: response.data.filter(
-                 (a) => this.state.employee.points >= a.points 
-              )}
-            )
+        console.log({ prizes: response.data });
+        this.setState({
+          prizes: response.data.filter(
+            a => this.state.employee.points >= a.points
+          )
+        });
       })
-      .catch(function(error){
-          console.log(error)
-      })
-  }
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
   render() {
     const employeeData = this.state.employee;
     return (
-        <div>
-        <EmployeeProfile 
-            name={employeeData.name}
-            job={employeeData.job}
-            area={employeeData.area}
-            imgSrc={employeeData.imgSrc}
-            points={employeeData.points}
+      <>
+        <div className="idemployee_profile_container">
+        <EmployeeProfile
+          className="idemployee_profile_card"
+          name={employeeData.name}
+          job={employeeData.job}
+          area={employeeData.area}
+          imgSrc={employeeData.imgSrc}
+          points={employeeData.points}
         />
-        
+
         <EmployeeForm
+        className="idemployee_profile_info"
           onChange={this.handleChange}
           formValues={this.state.employee}
           onSubmit={this.editEmployee}
         />
-        <button onClick={this.editEmployee}>Save</button>
-        <button onClick={this.deleteEmployee}>Delete</button>
+        <div className="idemployee_button_container">
+        <button className="idemployee_save_button" onClick={this.editEmployee}>
+          Save
+        </button>
+        <button
+          className="idemployee_delete_button"
+          onClick={this.deleteEmployee}
+        >
+          Delete
+        </button>
+        </div>
+        </div>
 
         <h2>Available Prizes</h2>
-        <EmployeePrizesList
-         list={this.state.prizes}
-        />
-      </div>
+        <EmployeePrizesList list={this.state.prizes} />
+      </>
     );
   }
 }

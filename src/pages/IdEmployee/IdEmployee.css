@@ -1,0 +1,45 @@
+body{
+    background-color: #f7f7f7;
+}
+
+.idemployee_profile_container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template: 3fr 1fr / 1.2fr 2fr;
+  grid-template-areas: "card info" "buttons buttons";
+  background-color: #fff;
+  padding: 20px;
+  margin: 40px 20%;
+  border-radius: 5px;
+  max-width: 900px;
+  box-sizing: border-box;
+}
+.idemployee_profile_container .profile_container{
+  justify-self: end;
+}
+
+.idemployee_profile_card {
+  grid-area: card;
+}
+.idemployee_profile_info {
+  grid-area: info;
+
+}
+.idemployee_button_container {
+  display: grid;
+  grid-template: 85px / repeat(2, 1fr);
+  align-items: center;
+  grid-area: buttons;
+}
+
+.idemployee_save_button {
+  background-color: #62e52c;
+  width: 200px;
+  height: 35px;
+}
+.idemployee_delete_button {
+  background-color: #f77b0e;
+  width: 200px;
+  height: 35px;
+}
