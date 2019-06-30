@@ -1,21 +1,5 @@
-
-.achievementFigure{
-    display: inline-block;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 0;
-
-}
-
-.achievementFigcaption{
-
-    background-color: #cdcdcd;
-    text-decoration: none;
-    color: #222;
-    padding: 3px;
-
-}
-
-.achievementContainer{
-    text-align: center;
+.achievement_data_container{
+    display: grid;
+    grid-template: 40px 40px/ 70px 1fr;
+    align-content: space-evenly
 }

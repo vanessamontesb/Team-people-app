@@ -59,10 +59,14 @@
 .list_profile_container *{
     justify-self: center;
 }
+ .profile_image{
+     max-width: 128px;
+ }
 
 .list_profile_image{
     align-self: center;
     clip-path: circle(60px at center);
+    max-width: 128px;
 }
 
 .list_profile_name{

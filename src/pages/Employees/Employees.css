@@ -1,3 +1,7 @@
+body{
+    background-color: #f7f7f7;
+}
+
 .create_employee_container{
     display: grid;
     grid-template: auto auto 35px / 350px;
