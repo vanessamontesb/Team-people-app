@@ -1,0 +1,108 @@
+.formContainer{
+    color: #fff;
+    padding: 10px;
+    background-color: #555;
+}
+
+.createAchievementform {
+
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(4, auto);
+
+
+
+}
+    
+@media (max-width: 768px) {
+    
+    
+}
+
+@media (max-width: 475px) {
+    
+   
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+
+
+.editButton{
+    text-align: center;
+    background: green;
+}
+
+.AchievementGrid{
+    margin-top: 10px;
+    display: grid;
+    justify-content: center;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, 200px);
+}
+
+.AchievementInput{
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #222;
+    font-size: 16px;
+    padding: 5px 5px 5px 10px;
+}
+
+.editAchivementContainer{
+    text-align: center;
+}
+
+.editAchievementForm{
+
+    display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(4, auto);
+
+
+
+}
+    
+@media (max-width: 768px) {
+    
+    
+}
+
+@media (max-width: 475px) {
+    
+   
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+
+
+.deleteButton{
+    text-align: center;
+    background: rgb(218, 111, 11);
+}
+
+.containerAchievementEdit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+}

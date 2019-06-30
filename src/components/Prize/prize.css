@@ -1,0 +1,23 @@
+.prizeContainer{
+    text-align: center;
+}
+
+.prizeFigure{
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0
+}
+
+.prizeImg{
+    width: 200px;
+    height: 200px;
+    vertical-align: middle;
+}
+
+.prizeFigcaption{
+    background-color: #cdcdcd;
+    text-decoration: none;
+    color: #222;
+    padding: 3px;
+}

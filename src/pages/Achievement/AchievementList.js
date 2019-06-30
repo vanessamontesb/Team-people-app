@@ -1,82 +1,10 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import"./pageAchievement.css";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { API_URL } from "../../constants";
 import Achievements from '../../components/Achievements/achievement';
 
-const StyledCharacterForm = styled.form`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, auto);
-
-    input[name="image"] {
-        grid-column: 1/3;
-    }
-
-    @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, auto);
-        input[name="image"] {
-            grid-column: 1/2;
-        }
-    }
-
-    @media (max-width: 475px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, auto);
-        input[name="image"] {
-            grid-column: 1/2;
-        }
-    }
-
-    button {
-        cursor: pointer;
-        background: transparent;
-        border: 1px solid #fff;
-        font-size: 16px;
-        color: #fff;
-        border-radius: 5px;
-        transition: background 0.37s ease-in-out;
-        margin: 5px;
-
-        :hover {
-            background: #ffffff33;
-            transition: background 0.37s ease-in-out;
-        }
-    }
-`;
-
-const StyledCharactersGrid = styled.div`
-    margin-top: 10px;
-    display: grid;
-    justify-content: center;
-    grid-gap: 5px;
-    grid-template-columns: repeat(auto-fill, 200px);
-`;
-
-const StyledCharacterInput = styled.input`
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #222;
-    font-size: 16px;
-    padding: 5px 5px 5px 10px;
-`;
-
-const StyledFormContainer = styled.div`
-    color: #fff;
-    padding: 10px;
-    background-color: #555;
-`;
-
-const StyleDeletePrizeButton =styled.button`
-    background: transparent;
-    border-radius: 3px;
-    border: 1px solid gray;
-    transform: scale(1);
-    transition: transform 0.35s ease-in-out;
-
-`;
 
 class AchievementList extends Component {
     constructor(props) {
@@ -150,7 +78,7 @@ class AchievementList extends Component {
     }
 
     createTextInput = (value, field) => (
-        <StyledCharacterInput
+        <input className ="AchievementInput"
             required
             type="text"
             name={field}
@@ -200,30 +128,30 @@ class AchievementList extends Component {
             value={filterText}
           />
         </div>
-                <StyledFormContainer>
+                <div className ="formContainer">
 
                     {createCharacterError && <p>An error ocurred creating Character</p>}
-                    <StyledCharacterForm onSubmit={e => this.createCharacter(e)}>
+                    <form className ="creatAchievementform" onSubmit={e => this.createCharacter(e)}>
                         {this.createTextInput(name, 'name')}
                         {this.createTextInput( points, 'points')}
                        
 
                         <button type="submit">Create</button>
-                    </StyledCharacterForm>
-                </StyledFormContainer>
-                <StyledCharactersGrid>
+                    </form>
+                </div>
+                <div className ="achievementGrid">
 
                     {filteredachievements.map(({ id, name, points})  => (
 
 
                         <Link  key={id} to={(`/achievements/${id}`)}>
-                        <StyleDeletePrizeButton>Edit achievement</StyleDeletePrizeButton>
+                        <button className ="editButton">Edit achievement</button>
                              <Achievements  name={name} points={points} />
 
                         </Link>
 
                     ))}
-                </StyledCharactersGrid>
+                </div>
             </>
         );
     }

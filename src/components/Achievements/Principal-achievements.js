@@ -1,18 +1,17 @@
 import React from 'react';
 import AchievementList from '../../pages/Achievement/AchievementList';
-import styled from 'styled-components';
+import "./achievements.css";
 
-const StyledAppContainer = styled.div`
-    text-align: center;
-`;
 
 
 
 function Achievement() {
   return (
-      <StyledAppContainer>
-        <AchievementList />
-      </StyledAppContainer>
+      <div className ="achievementContainer">
+         <AchievementList/>
+      </div>
+       
+     
   );
 }
 
