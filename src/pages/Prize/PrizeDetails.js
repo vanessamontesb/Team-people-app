@@ -1,102 +1,8 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import "./pagePrize.css";
 import axios from 'axios';
 import { API_URL } from "../../constants";
 
-const StyledCharacterForm = styled.form`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, auto);
-
-    input[name="image"] {
-        grid-column: 1/3;
-    }
-
-    @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, auto);
-        input[name="image"] {
-            grid-column: 1/2;
-        }
-    }
-
-    @media (max-width: 475px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, auto);
-        input[name="image"] {
-            grid-column: 1/2;
-        }
-    }
-
-    button {
-        cursor: pointer;
-        background: transparent;
-        border: 1px solid #fff;
-        font-size: 16px;
-        color: #fff;
-        border-radius: 5px;
-        transition: background 0.37s ease-in-out;
-        margin: 5px;
-
-        :hover {
-            background: #ffffff33;
-            transition: background 0.37s ease-in-out;
-        }
-    }
-`;
-
-const StyledCharactersGrid = styled.div`
-    margin-top: 10px;
-    display: grid;
-    justify-content: center;
-    grid-gap: 5px;
-    grid-template-columns: repeat(auto-fill, 200px);
-`;
-
-const StyledCharacterInput = styled.input`
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #222;
-    font-size: 16px;
-    padding: 5px 5px 5px 10px;
-`;
-
-const StyledFormContainer = styled.div`
-    color: #fff;
-    padding: 10px;
-    background-color: #555;
-`;
-
-const StyledProfile = styled.div`
-    text-align: center;
-`;
-
-const StyledCharacter = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center
-    margin: 10px 0;
-`;
-
-const StyledCharacterInfo = styled.div`
-    text-align: left;
-    margin-left: 10px;
-`;
-
-const StyledProfilePic = styled.img`
-    height: 300px;
-    width: 300px;
-`;
-
-
-const StyleDeletePrizeButton =styled.button`
-    background: transparent;
-    border-radius: 3px;
-    border: 1px solid gray;
-    transform: scale(1);
-    transition: transform 0.35s ease-in-out;
-
-`;
 
 
 class PrizeDetails extends Component {
@@ -159,10 +65,9 @@ class PrizeDetails extends Component {
         }))
     }
 
-    editEmployee = e => {
+    editPrize = e => {
         e.preventDefault();
-        console.log("submit from edit");
-        console.log(this.state.characterInfo);
+        
     
         const id = this.props.match.params.id;
     
@@ -177,7 +82,7 @@ class PrizeDetails extends Component {
       };
         
       createTextInput = (value, field) => (
-        <StyledCharacterInput
+        <input className ="CreatePrizeInput"
             required
             type="text"
             name={field}
@@ -200,36 +105,36 @@ class PrizeDetails extends Component {
         } = this.state;
 
         return ( 
-            <StyledProfile>
+            <div className ="infoPrizeContainer">
 
-                <StyledFormContainer>
+                <div className ="editFormContainer">
 
 
-                <StyledCharacterForm onSubmit={e => this.editEmployee(e)}
+                <form className ="editPrizeForm" onSubmit={e => this.editPrize(e)}
                 onChange={this.handleChange}
                 formValues={this.state.characterInfo}>
                 {this.createTextInput(name, 'name')}
                 {this.createTextInput( points, 'points')}
                 {this.createTextInput( imgSrc,'imgSrc')}
                 {this.createTextInput(description, 'description')}
-                <StyleDeletePrizeButton  type="submit" onClick={this.editEmployee}>Save</StyleDeletePrizeButton>
+                <button className="editButton"  type="submit" onClick={this.editPrize}>Save</button>
                 
 
                
-                </StyledCharacterForm>
-                </StyledFormContainer>
+                </form>
+                </div>
                 
-                <StyledCharacter>
-                    <StyledProfilePic src={imgSrc} alt="Prize"/>
-                    <StyledCharacterInfo>
+                <div className ="infoPrizeContainer">
+                    <img className ="infoPrizeImg" src={imgSrc} alt="Prize"/>
+                    <div className ="prizeinfo">
                     
                         <p><b>Name : </b>{name}</p>
                         <p><b>Points: </b>{points}</p>
                         <p><b>Description: </b>{description}</p>
-                        <StyleDeletePrizeButton onClick={()=>this.deletePrize(id)}>Delete</StyleDeletePrizeButton>
-                    </StyledCharacterInfo>
-                </StyledCharacter>
-            </StyledProfile>
+                        <button className ="deleteButton" onClick={()=>this.deletePrize(id)}>Delete</button>
+                    </div>
+                </div>
+            </div>
          );
     }
 }
