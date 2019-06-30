@@ -86,15 +86,4 @@
         
     }
 
-    .menu__link {
-        color:white;
-        display: inline-block;
-        height: 100%;
-        font-size: 20px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        padding: 0 3px;
-    }
-    
 }
