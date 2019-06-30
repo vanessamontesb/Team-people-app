@@ -1,58 +1,55 @@
 import React from "react";
+import "./EmployeeForm.css";
 
 class EmployeeForm extends React.Component {
   render() {
     return (
-      <div>
-        <p>___________________________________</p>
-        <h1>Form</h1>
-        <h3>Add New Employee :)</h3>
+      <form onSubmit={this.props.onSubmit} className="employee_form">
+        <input
+          className="employee_form_input"
+          placeholder="Employee Name"
+          onChange={this.props.onChange}
+          type="text"
+          name="name"
+          value={this.props.formValues.name}
+        />
 
-        <form onSubmit={this.props.onSubmit}>
-          <label>Name</label>
-          <input
-            onChange={this.props.onChange}
-            type="text"
-            name="name"
-            value={this.props.formValues.name}
-          />
+        <input
+          className="employee_form_input"
+          placeholder="Job"
+          onChange={this.props.onChange}
+          type="text"
+          name="job"
+          value={this.props.formValues.job}
+        />
 
-          <label>Job</label>
-          <input
-            onChange={this.props.onChange}
-            type="text"
-            name="job"
-            value={this.props.formValues.job}
-          />
+        <input
+          className="employee_form_input"
+          placeholder="Area"
+          onChange={this.props.onChange}
+          type="text"
+          name="area"
+          value={this.props.formValues.area}
+        />
 
-          <label>Area</label>
-          <input
-            onChange={this.props.onChange}
-            type="text"
-            name="area"
-            value={this.props.formValues.area}
-          />
+        <input
+          className="employee_form_input"
+          placeholder="Points"
+          onChange={this.props.onChange}
+          type="number"
+          name="points"
+          value={this.props.formValues.points}
+        />
 
-          <label>Points</label>
-          <input
-            onChange={this.props.onChange}
-            type="number"
-            name="points"
-            value={this.props.formValues.points}
-          />
-
-          <label>Image</label>
-          <input
-            onChange={this.props.onChange}
-            type="text"
-            name="imgSrc"
-            value={this.props.formValues.imgSrc}
-          />
-
-        </form>
-
-        <p>___________________________________</p>
-      </div>
+        <input
+          className="employee_form_input"
+          placeholder="Image Url"
+          onChange={this.props.onChange}
+          type="text"
+          name="imgSrc"
+          value={this.props.formValues.imgSrc}
+        />
+      </form>
     );
   }
 }

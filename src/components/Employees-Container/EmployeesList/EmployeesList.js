@@ -1,46 +1,59 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./EmployeesList.css";
 
-function EmployeesList (props) {
-    const employees = props.list
+function EmployeesList(props) {
+  const employees = props.list;
 
-    const [ search, setSearch ] = React.useState("")
+  const [search, setSearch] = React.useState("");
 
-    const filteredEmployees = employees.filter(employeeinfo => {
-        return `${employeeinfo.name}${employeeinfo.points}`.includes(search)}
-    )
-    
-    return(
-        <div>
-            
-            <form>
-                <label>Search</label>
-                <input 
-                    type="text" 
-                    placeholder='Search by employee or points'
-                    value={search}
-                    onChange={e => setSearch(e.target.value) }
+  const filteredEmployees = employees.filter(employeeinfo => {
+    return `${employeeinfo.name}${employeeinfo.points}`.includes(search);
+  });
+
+  return (
+    <div>
+      <div className="general_search_container">
+        <form>
+          <input
+            className="general_search_bar"
+            type="text"
+            placeholder="Search by employee or points"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+        </form>
+      </div>
+
+      <ul className="list_container">
+        {filteredEmployees.map(employeeinfo => {
+          return (
+            <li className="list-item" key={employeeinfo.id}>
+              <Link
+                to={`/employees/${employeeinfo.id}`}
+                className="link-preset list_profile_container"
+              >
+                <img
+                  className="list_profile_image"
+                  src={employeeinfo.imgSrc}
+                  alt="Employee Profile"
                 />
-            </form>
-
-            
-            <ul>
-                {filteredEmployees.map((employeeinfo) => {
-        return (
-            <li key={employeeinfo.id}>
-                <Link to={`/employees/${employeeinfo.id}`}>
-                    
-                        <img src={employeeinfo.imgSrc} alt="Employee Profile"/>
-                        <p>{employeeinfo.name}</p>
-                        <p>{employeeinfo.points}</p>
-                        </Link>
-                </li>
-            )
-    })}
-
-            </ul>
-        </div>
-    )
+                <h3 className="list_profile_name">{employeeinfo.name}</h3>
+                <div className="list_profile_points">
+                  <p>
+                    <span role="img" aria-label="star">
+                      ⭐
+                    </span>
+                    {employeeinfo.points}
+                  </p>
+                </div>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
-export default EmployeesList
+export default EmployeesList;

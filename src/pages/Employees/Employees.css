@@ -1,0 +1,20 @@
+.create_employee_container{
+    display: grid;
+    grid-template: auto auto 35px / 350px;
+    grid-gap: 20px;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.button_save{
+    background-color: #62e52c;
+    border-radius: 5px;
+    margin: 0 75px;
+    border: none;
+    color: #fafafa;
+    font-size: 18px;    
+}
+
+.button_save:hover {
+    background-color: #5dce2c;
+}

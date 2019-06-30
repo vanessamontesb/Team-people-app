@@ -1,0 +1,17 @@
+.employee_form {
+  display: grid;
+  grid-template: repeat(5, 35px) / minmax(200px, 350px);
+  grid-gap: 15px;
+  justify-content: center;
+}
+.employee_form_input {
+  background: #e5e5e5;
+  border: none;
+  border-radius: 5px;
+  padding-left: 18px;
+  font-size: 18px;
+}
+
+.employee_form_input:focus {
+    border: 2px solid #62e52c;
+}
