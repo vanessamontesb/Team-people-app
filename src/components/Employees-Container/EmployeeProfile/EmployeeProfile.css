@@ -10,12 +10,15 @@
 
 .profile_container *{
     background: RGB(230, 230, 230);
-    justify-self: center
+    justify-self: center;
 }
 
 .profile_image{
+    height: 150px;
+    width: 150px;
     clip-path: circle(60px at center);
     margin-top: 10px;
+    
 
 }
 
@@ -28,6 +31,7 @@
     display: inline-block;
     box-sizing: border-box;
     text-align: center;
+    
     
 }
 
