@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Team-people-app/static/css/main.31da32e7.chunk.css",
+    "main.js": "/Team-people-app/static/js/main.ab36e237.chunk.js",
+    "main.js.map": "/Team-people-app/static/js/main.ab36e237.chunk.js.map",
+    "runtime~main.js": "/Team-people-app/static/js/runtime~main.70a77d03.js",
+    "runtime~main.js.map": "/Team-people-app/static/js/runtime~main.70a77d03.js.map",
+    "static/js/2.e8974815.chunk.js": "/Team-people-app/static/js/2.e8974815.chunk.js",
+    "static/js/2.e8974815.chunk.js.map": "/Team-people-app/static/js/2.e8974815.chunk.js.map",
+    "index.html": "/Team-people-app/index.html",
+    "precache-manifest.3fc4681147f3f0b62934606cacd88c20.js": "/Team-people-app/precache-manifest.3fc4681147f3f0b62934606cacd88c20.js",
+    "service-worker.js": "/Team-people-app/service-worker.js",
+    "static/css/main.31da32e7.chunk.css.map": "/Team-people-app/static/css/main.31da32e7.chunk.css.map"
+  }
+}
