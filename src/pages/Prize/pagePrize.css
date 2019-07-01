@@ -100,9 +100,13 @@
 
 .deletePrizeButton{
     background-color: #f89719;
+    border-radius: 5px;
+    border: none;
+    color: #fafafa;
+    font-size: 18px;  
+    width: 150px;  
+    height: 30px;
     
-    width: 200px;
-    height: 35px;
 }
 
 .filter-field{
@@ -181,6 +185,7 @@
     grid-template: 85px / repeat(2, 1fr);
     align-items: center;
     grid-area: buttons;
+    grid-gap:10px;
 
 }
 

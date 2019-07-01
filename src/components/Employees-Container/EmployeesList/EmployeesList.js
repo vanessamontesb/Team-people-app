@@ -18,7 +18,7 @@ function EmployeesList(props) {
           <input
             className="general_search_bar"
             type="text"
-            placeholder="Search by employee or points"
+            placeholder="Search by employee name or points"
             value={search}
             onChange={e => setSearch(e.target.value)}
           />

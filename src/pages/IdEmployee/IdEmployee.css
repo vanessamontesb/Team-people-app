@@ -9,8 +9,8 @@ body{
   grid-template: 3fr 1fr / 1.2fr 2fr;
   grid-template-areas: "card info" "buttons buttons";
   background-color: #fff;
-  padding: 30px;
-  margin: 40px 30px;
+  padding: 20px;
+  margin: 40px 40px;
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -30,6 +30,7 @@ body{
   grid-template: 85px / repeat(2, 1fr);
   align-items: center;
   grid-area: buttons;
+  grid-gap:10px;
 }
 
 .idemployee_save_button {

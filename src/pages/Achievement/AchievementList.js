@@ -122,7 +122,7 @@ class AchievementList extends Component {
         <form className="achievement_filter_container">
           <input
             onChange={e => this.handleTextChange(e, "filterText")}
-            placeholder="Search by Achievement name"
+            placeholder="Search by achievement name"
             className="achievements-filter-field"
             type="text"
             value={filterText}
