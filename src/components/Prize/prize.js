@@ -2,7 +2,7 @@ import React from 'react';
 import "./prize.css"
 
 
-const Prize = ({imgSrc, points, name, deleteColor }) => {
+const Prize = ({imgSrc, points, name }) => {
     return (
         <>
         <figure className ="prizeFigure">

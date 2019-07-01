@@ -5,25 +5,25 @@
     grid-template: 48px /repeat(3, 200px);
     grid-template-areas: "search search search .";
     margin-top:20px;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
     
 
 
 }
 
 .createPrizeContainer{
-    color: #fff;
-    padding: 10px;
-    background-color: #555
+    display: grid;
+    grid-template: auto auto 35px / 350px;
+    grid-gap: 20px;
+    justify-content: center;
+    padding: 40px 0;
 }
 
 .prizeForm {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, auto);
-
-
-
+    grid-template: repeat(5, 35px) / minmax(200px, 350px);
+    grid-gap: 15px;
+    justify-content: center;
 }
 
 
@@ -31,12 +31,11 @@
 
 .createPrizeInput{
 
-    margin: 5px;
+    background: #e5e5e5;
+    border: none;
     border-radius: 5px;
-    border: 1px solid #222;
-    font-size: 16px;
-    padding: 5px 5px 5px 10px;
-    
+    padding-left: 18px;
+    font-size: 18px;
 
 }
 
@@ -61,28 +60,26 @@
 }
 
 
-.infoPrizeContainer{
-    align-content: center;
-}
-
-.editFormContainer{
-    color: #fff;
-    padding: 10px;
-    background-color: #555;
-}
-
-.editPrizeForm{
+.editPrizeContainer{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, auto);
-
-
-
+    justify-items: center;
+    align-items: center;
+    grid-template: 3fr 1fr / 1.2fr 2fr;
+    grid-template-areas: "card info" "buttons buttons";
+    background-color: #fff;
+    padding: 20px;
+    margin: 40px 20%;
+    border-radius: 5px;
+    max-width: 900px;
+    box-sizing: border-box;
 }
 
-.editButton{
-    text-align: center;
-    background: green;
+
+
+.editPrizeButton{
+    background-color: #62e52c;
+    width: 200px;
+    height: 35px;
 }
 
 .infoPrizeContainer {
@@ -101,9 +98,11 @@
     text-align: left;
 }
 
-.deleteButton{
-    text-align: center;
-    background: rgb(218, 111, 11);
+.deletePrizeButton{
+    background-color: #f89719;
+    
+    width: 200px;
+    height: 35px;
 }
 
 .filter-field{
@@ -161,4 +160,71 @@
     align-content: center;
     
 
+}
+
+
+
+.button_general_create{
+    background-color: #62e52c;
+    border-radius: 5px;
+    color: #fafafa;
+    font-size: 18px;  
+    width: 150px;  
+    height: 30px;
+    margin-left: 30%;
+    
+  
+}
+
+.buttonsContainer{
+
+    display: grid;
+    grid-template: 85px / repeat(2, 1fr);
+    align-items: center;
+    grid-area: buttons;
+
+}
+
+.button_general_create:hover {
+    background-color: #5dce2c;
+}
+
+.createContainer{
+    display:grid;
+    height: 270px;
+    width: 200px;
+    padding-left: 42%
+    
+}
+
+.editPrizeInput{
+    background: #e5e5e5;
+    border: none;
+    border-radius: 5px;
+    padding-left: 18px;
+    font-size: 18px;
+}
+
+.editForm{
+display: grid;
+  grid-template: repeat(5, 35px) / minmax(200px, 350px);
+  grid-gap: 15px;
+  justify-content: center;
+
+}
+
+
+.editPrize{
+    grid-area: card;
+}
+
+.editFormContainer{
+    grid-area: info;
+}
+
+.finalEditContainer {
+        display:grid;
+        height: 260px;
+        width: 200px;
+        padding-left: 18% 
 }
