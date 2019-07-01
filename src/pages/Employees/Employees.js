@@ -9,8 +9,6 @@ import "./Employees.css"
 class Employees extends React.Component {
   constructor(props) {
     super(props);
-    console.log("1. Constructor");
-
     this.state = {
       form: {
         name: "",
@@ -41,7 +39,6 @@ class Employees extends React.Component {
 
   createEmployee = e => {
     e.preventDefault();
-    console.log("entro a la funcion");
     const {
       form: { name, job, area, imgSrc, points }
     } = this.state;
@@ -63,12 +60,10 @@ class Employees extends React.Component {
         window.location.reload()
       })
       .catch(() => {
-        console.log("error in createEmployee");
       });
   };
 
   componentDidMount() {
-    console.log("3. componentDidMount");
     this.getEmployees();
   }
 
@@ -87,15 +82,7 @@ class Employees extends React.Component {
       });
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log("5. componentDidUpdate()");
-  }
-
-  componentWillUnmount() {}
-
   render() {
-    console.log("2. render()");
-
     return (
       <>
       {this.state.open? (
