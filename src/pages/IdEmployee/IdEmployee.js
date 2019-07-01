@@ -83,7 +83,7 @@ class IdEmployee extends React.Component {
   render() {
     const employeeData = this.state.employee;
     return (
-      <>
+      <div className="prizeslist-wrapper">
         <div className="idemployee_profile_container">
         <EmployeeProfile
           className="idemployee_profile_card"
@@ -112,10 +112,9 @@ class IdEmployee extends React.Component {
         </button>
         </div>
         </div>
-
-        <h2>Available Prizes</h2>
         <EmployeePrizesList list={this.state.prizes} />
-      </>
+
+      </div>
     );
   }
 }

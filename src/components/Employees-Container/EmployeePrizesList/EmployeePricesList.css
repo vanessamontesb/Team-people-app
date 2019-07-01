@@ -1,0 +1,48 @@
+.prizeslist-wrapper{
+ max-width: 1000px;
+ margin: 10px auto;
+}
+
+.prizelist_container{
+ display: grid;
+ grid-template-columns: repeat(auto-fill, 200px);
+ grid-column-gap: 10px;
+ grid-row-gap: 20px;
+ list-style: none;
+ margin: 1fr;
+ padding: 0;
+ box-sizing: border-box;
+ justify-content: center;
+}
+
+.prizelist_info_container{
+  width: 155px;
+  border-radius: 5px;
+  display: grid;
+  grid-template: 140px 25px 25px / 155px;
+  background: #e6e6e6;
+}
+
+.prizelist_info_container *{
+  justify-self: center;
+}
+
+.prizelist_image{
+  width: 155px;
+  height: 140px;
+}
+
+.prizelist_name{
+  width: 150px;
+  font-size: 16px;
+  border-bottom: 2px #f7f7f7 solid;
+  margin: 0px 0px;
+  padding: 0px 0px 10px 0px;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+}
+.prizelist_points{
+  margin: 0;
+  padding: 0;
+}
