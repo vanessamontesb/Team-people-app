@@ -132,7 +132,7 @@ class PrizeDetails extends Component {
                 
             </div>
             <div className ="buttonsContainer">
-            <button className="editPrizeButton"  type="submit" onClick={this.editPrize}>Save</button>
+            <button className="button_general editPrizeButton"  type="submit" onClick={this.editPrize}>Save</button>
             <button className ="deletePrizeButton" onClick={()=>this.deletePrize(id)}>Delete</button>
             </div>
             </div>

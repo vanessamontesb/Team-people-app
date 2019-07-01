@@ -143,7 +143,7 @@ class PrizeList extends Component {
         <div className="filterContainer">
           <input 
             onChange={(e) => this.handleTextChange(e, "filterText")}
-            placeholder="Search by name"
+            placeholder="Search by prize name"
             className="filter-field"
             type="text"
             value={filterText}
