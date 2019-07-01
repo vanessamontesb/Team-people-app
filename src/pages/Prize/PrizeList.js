@@ -155,19 +155,27 @@ class PrizeList extends Component {
         </div>
        
         </div>
+                 
                  {this.state.open? (
-                <div className="createPrizeContainer">
+                     <div >
+                     <div className ="createContainer">
+                     <Prize imgSrc={imgSrc} name={name} points={points}/>
+                    </div>
+                 <div className="createPrizeContainer">
 
                     {createCharacterError && <p>An error ocurred creating Character</p>}
+                   
                     <form className="prizeForm" onSubmit={e => this.createCharacter(e)}>
                         {this.createTextInput(name, 'name')}
                         {this.createTextInput( points, 'points')}
                         {this.createTextInput( imgSrc,'imgSrc')}
                         {this.createTextInput(description, 'description')}
 
-                        <button type="submit">Create</button>
+                        <button className ="button_general_create " type="submit">Save</button>
                     </form>
                 </div>
+                     </div>
+               
                 ):null}
             
 

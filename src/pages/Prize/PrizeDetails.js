@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "./pagePrize.css";
 import axios from 'axios';
 import { API_URL } from "../../constants";
+import Prize from '../../components/Prize/prize';
 
 
 
@@ -82,7 +83,7 @@ class PrizeDetails extends Component {
       };
         
       createTextInput = (value, field) => (
-        <input className ="CreatePrizeInput"
+        <input className ="editPrizeInput"
             required
             type="text"
             name={field}
@@ -105,36 +106,37 @@ class PrizeDetails extends Component {
         } = this.state;
 
         return ( 
-            <div className ="infoPrizeContainer">
+            <>
+            <div className ="editPrizeContainer">
+            
+
+                
+                <div className ="editprize finalEditContainer">
+
+                <Prize imgSrc={imgSrc} name={name} points={points} />
+                    
+                </div>
+            
 
                 <div className ="editFormContainer">
 
 
-                <form className ="editPrizeForm" onSubmit={e => this.editPrize(e)}
+                <form className ="editForm" onSubmit={e => this.editPrize(e)}
                 onChange={this.handleChange}
                 formValues={this.state.characterInfo}>
                 {this.createTextInput(name, 'name')}
                 {this.createTextInput( points, 'points')}
                 {this.createTextInput( imgSrc,'imgSrc')}
                 {this.createTextInput(description, 'description')}
-                <button className="editButton"  type="submit" onClick={this.editPrize}>Save</button>
-                
-
-               
                 </form>
-                </div>
                 
-                <div className ="infoPrizeContainer">
-                    <img className ="infoPrizeImg" src={imgSrc} alt="Prize"/>
-                    <div className ="prizeinfo">
-                    
-                        <p><b>Name : </b>{name}</p>
-                        <p><b>Points: </b>{points}</p>
-                        <p><b>Description: </b>{description}</p>
-                        <button className ="deleteButton" onClick={()=>this.deletePrize(id)}>Delete</button>
-                    </div>
-                </div>
             </div>
+            <div className ="buttonsContainer">
+            <button className="editPrizeButton"  type="submit" onClick={this.editPrize}>Save</button>
+            <button className ="deletePrizeButton" onClick={()=>this.deletePrize(id)}>Delete</button>
+            </div>
+            </div>
+            </>
          );
     }
 }
