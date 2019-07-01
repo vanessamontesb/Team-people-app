@@ -36,7 +36,10 @@
 .general_search_bar :placeholder-shown{
     font-style: italic
 }
-
+.list_wrapper{
+    margin: 0 auto;
+    max-width: 1000px;
+}
 .list_container{
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);

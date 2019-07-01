@@ -39,7 +39,7 @@ body{
 .add_container{
     margin-top: 20px;
     display: grid;
-    margin-bottom: -35px;
+    margin-bottom: -40px;
     justify-content: center;
     grid-template: 35px /repeat(4, 200px);
     grid-template-areas: ". . . button"
@@ -47,6 +47,4 @@ body{
 
 .button_add{
     grid-area: button;
-    /* width: 700px;
-    height: 35px; */
 }

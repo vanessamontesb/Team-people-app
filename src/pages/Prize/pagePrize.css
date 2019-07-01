@@ -80,7 +80,6 @@
 
 }
 
-
 .editButton{
     text-align: center;
     background: green;
@@ -157,7 +156,7 @@
 .addButtonContainer{
     height: 80px;
     display: flex;
-    margin-top: 20px;
+    margin-top: 30px;
     /* background: red; */
     align-content: center;
     
