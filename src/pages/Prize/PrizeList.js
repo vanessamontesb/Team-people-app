@@ -151,7 +151,7 @@ class PrizeList extends Component {
         
         </div>
         <div className="addButtonContainer">
-        <button className="button_general button_add" onClick={(e)=> this.openForm(e)}>Add New</button>
+        <button className="button_general" onClick={(e)=> this.openForm(e)}>Add New</button>
         </div>
        
         </div>

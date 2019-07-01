@@ -1,108 +1,104 @@
-.formContainer{
-    color: #fff;
-    padding: 10px;
-    background-color: #555;
+body{
+  background-color: #f7f7f7;
 }
 
-.createAchievementform {
+.achievement_grid_wrapper {
+  max-width: 700px;
+  margin: 20px auto;
+}
 
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(4, auto);
+.achievement_filter_container{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 30px
+}
+.achievements-filter-field{
+  background: #e6e6e6;
+  border: none;
+  border-radius: 5px;
+  padding-left: 18px;
+  font-size: 18px;
+  font-style: italic;
+}
+.achievement_formcreate{
+  margin: 40px 0;
+  display: grid;
+  justify-content: center;
+  grid-gap: 5px;
+  grid-template-columns: minmax(450px, 500px) minmax(100px, 150px);
+  grid-template-rows: repeat(auto-fill, 140px);
+  border-radius: 5px;
+  background: #eeeeee;
+  color: #253746;
+}
+.achievement_inputcreate_container{
+  display: grid;
+  grid-template: 30px 30px / 70px 1fr;
+  align-content: space-evenly
+}
+.achievement_inputcreate{
+  border-radius: 5px;
+  background: #bebebe;
+  align-items: start;
+  border: none;
+  color: #fafafa;
+  font-size: 18px;
+  padding-left: 15px;
+  margin-right: 15px;
+}
 
+.achievement_saveform_button {
+  text-align: center;
+  height: 90px;
+  align-self: center;
+  background: transparent;
+  border: 2px solid #62e52c;
+  color: #62e52c;
+}
+.achievement_saveform_button:hover {
+  background: #d1ecc6;
+}
 
+.achievement_grid {
+  margin-top: 10px;
+  display: grid;
+  justify-content: center;
+  grid-gap: 5px;
+  grid-template-columns: minmax(450px, 500px) minmax(100px, 150px);
+  grid-template-rows: repeat(auto-fill, 140px);
+  text-decoration: none;
+  border-radius: 5px;
+  background: #e5e5e5;
+  color: #253746;
+}
+
+.achievement_save_button {
+  text-align: center;
+  height: 35px;
+  align-self: center;
+}
+.general_delete_button {
+  background-color: #f77b0e
 
 }
-    
+.achievent_eddit_button_container{
+  display: grid;
+  align-content: space-evenly;
+}
+.achievement_edit_button {
+  text-align: center;
+  height: 35px;
+  align-self: center;
+  color: #253746;
+  border: 2px solid #253746;
+  background-color: transparent;
+
+}
+
+
+
 @media (max-width: 768px) {
-    
-    
 }
 
 @media (max-width: 475px) {
-    
-   
-}
-
-button {
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid #fff;
-    font-size: 16px;
-    color: #fff;
-    border-radius: 5px;
-    margin: 5px;
-}
-
-
-
-.editButton{
-    text-align: center;
-    background: green;
-}
-
-.AchievementGrid{
-    margin-top: 10px;
-    display: grid;
-    justify-content: center;
-    grid-gap: 5px;
-    grid-template-columns: repeat(auto-fill, 200px);
-}
-
-.AchievementInput{
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #222;
-    font-size: 16px;
-    padding: 5px 5px 5px 10px;
-}
-
-.editAchivementContainer{
-    text-align: center;
-}
-
-.editAchievementForm{
-
-    display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(4, auto);
-
-
-
-}
-    
-@media (max-width: 768px) {
-    
-    
-}
-
-@media (max-width: 475px) {
-    
-   
-}
-
-button {
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid #fff;
-    font-size: 16px;
-    color: #fff;
-    border-radius: 5px;
-    margin: 5px;
-}
-
-
-
-.deleteButton{
-    text-align: center;
-    background: rgb(218, 111, 11);
-}
-
-.containerAchievementEdit{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
-    
 }

@@ -24,7 +24,7 @@ function EmployeesList(props) {
           />
         </form>
       </div>
-
+<div className="list_wrapper">
       <ul className="list_container">
         {filteredEmployees.map(employeeinfo => {
           return (
@@ -52,6 +52,7 @@ function EmployeesList(props) {
           );
         })}
       </ul>
+</div>
     </div>
   );
 }
